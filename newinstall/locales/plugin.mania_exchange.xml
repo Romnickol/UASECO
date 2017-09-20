@@ -7,9 +7,9 @@
 	//-->
 
 	<chat_records>
-		<en>{#server}» {#record}Mania-Exchange World Record: {#highlite}{1}{#record} by {#highlite}{2}</en>
-		<de>{#server}» {#record}Mania-Exchange Weltrecord: {#highlite}{1}{#record} von {#highlite}{2}</de>
-		<ru>{#server}» {#record}Мировой рекорд Mania-Exchange: {#highlite}{1}{#record} от {#highlite}{2}</ru>
+		<en>{#server}» {#record}MX World Record: {#highlite}{1}{#record} by {#highlite}{2}</en>
+-		<de>{#server}» {#record}MX Weltrecord: {#highlite}{1}{#record} von {#highlite}{2}</de>
+		<ru>{#server}» {#record}Мировой рекорд MX: {#highlite}{1}{#record} от {#highlite}{2}</ru>
 	</chat_records>
 
 	<window_title_mxlist>
