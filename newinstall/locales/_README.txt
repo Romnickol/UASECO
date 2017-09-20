@@ -32,3 +32,11 @@ How it works:
 
 Wether you're a plugin developer or just a translator: feel free to share you're work! You can post the changed files in the forum,
 commit them on Github, whatever. Thank you :)
+
+Папка с переводами
+==================
+В этой папке в формате XML хранятся строки, которые могут быть переведены и показываться в игре в зависимости от её языка. [куча ненужного текста]
+Чтобы добавить язык, достаточно дописать строку на нужном языке, поместив ее в тег языка:
+<en>blabla</en>
+<ru>блабла</ru>
+Однако, автор врёт - в этих файлах находятся далеко не все строки (примерно треть, может даже четверть)...
