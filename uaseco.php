@@ -406,19 +406,21 @@ class UASECO extends Helper {
 		// Connect to the database
 		$this->displayLoadStatus('Connecting to database...', 0.0);
 		if ($this->settings['mask_password'] == true) {
-			$this->console("[Database] Try to connect to database server on [{1}] with database [{2}], login [{3}] and password [{4}] (masked password)",
+			$this->console("[Database] Try to connect to database server on [{1}:{5}] with database [{2}], login [{3}] and password [{4}] (masked password)",
 				$this->settings['dbms']['host'],
 				$this->settings['dbms']['database'],
 				$this->settings['dbms']['login'],
-				preg_replace('#.#', '*', $this->settings['dbms']['password'])
+				preg_replace('#.#', '*', $this->settings['dbms']['password'],
+				$this->settings['dbms']['port'])
 			);
 		}
 		else {
-			$this->console("[Database] Try to connect to database server on [{1}] with database [{2}], login [{3}] and password [{4}]",
+			$this->console("[Database] Try to connect to database server on [{1}:{5}] with database [{2}], login [{3}] and password [{4}]",
 				$this->settings['dbms']['host'],
 				$this->settings['dbms']['database'],
 				$this->settings['dbms']['login'],
-				$this->settings['dbms']['password']
+				$this->settings['dbms']['password'],
+				$this->settings['dbms']['port']
 			);
 		}
 		$this->connectDatabase();
@@ -1246,6 +1248,7 @@ class UASECO extends Helper {
 	                'password'		=> $this->settings['dbms']['password'],
 			'database'		=> $this->settings['dbms']['database'],
 			'table_prefix'		=> $this->settings['dbms']['table_prefix'],
+			'port'			=> $this->settings['dbms']['port'],
 			'autocommit'		=> true,
 			'charset'		=> 'utf8mb4',
 			'collate'		=> 'utf8mb4_unicode_ci',
