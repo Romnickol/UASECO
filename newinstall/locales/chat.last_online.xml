@@ -9,15 +9,18 @@
 	<plugin_description>
 		<en>Shows when a player was last online</en>
 		<de>Zeigt an wann der Spieler zuletzt online war</de>
+		<ru>Показывает дату последнего посещения сервера игроком</ru>
 	</plugin_description>
 
 	<info_message>
 		<en>Wondering when a player was last online? Use "/laston LOGIN" to find out!</en>
 		<de>Fragst du dich wann ein Spieler zuletzt Online war? Gebe /laston LOGIN ein, um es rauszufinden!</de>
+		<ru>Надо узнать, когда здесь был тот или иной игрок? Набери "/laston логин", чтобы узнать!</ru>
 	</info_message>
 
 	<answer>
 		<en>{#server}» Player {#highlite}{1}$z$s{#server} was last online on: {#highlite}{2}</en>
 		<de>{#server}» Player {#highlite}{1}$z$s{#server} was last online on: {#highlite}{2}</de>
+		<ru>{#server}» Игрок {#highlite}{1}$z$s{#server} был здесь: {#highlite}{2}</ru>
 	</answer>
 </locales>
