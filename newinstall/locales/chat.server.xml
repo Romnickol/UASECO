@@ -9,113 +9,134 @@
 	<plugin_description>
 		<en>Provides server and UASECO info</en>
 		<de>Stellt Server- und UASECO-Informationen zur Verfügung</de>
+		<ru>Информация о сервере и контроллере UASECO</ru>
 	</plugin_description>
 
 
 	<slash_uaseco_description>
 		<en>Displays info about UASECO</en>
 		<de>Zeigt Informationen über UASECO an</de>
+		<ru>Информация о контроллере UASECO</ru>
 	</slash_uaseco_description>
 
 	<slash_uaseco_chat_message>
 		<en>{#server}» $L[{1}]{2}$L version {#highlite}{3}{#server} build {#highlite}{4}</en>
 		<de>{#server}» $L[{1}]{2}$L Version {#highlite}{3}{#server} build {#highlite}{4}</de>
+		<ru>{#server}» $L[{1}]{2}$L версия {#highlite}{3}{#server} сборка {#highlite}{4}</ru>
 	</slash_uaseco_chat_message>
 
 
 	<slash_contact_description>
 		<en>Displays the contact information of this server</en>
 		<de>Zeigt die Kontaktmöglichket zu diesen Server an</de>
+		<ru>Контактная информация</ru>
 	</slash_contact_description>
 
 	<slash_contact_chat_message>
 		<en>{#server}» You can contact us by {#highlite}{1}</en>
 		<de>{#server}» Sie können uns über {#highlite}{1}{#server} kontaktieren</de>
+		<ru>{#server}» Вы можете связаться с нами через {#highlite}{1}</ru>
 	</slash_contact_chat_message>
 
 	<slash_contact_chat_message_no_contact>
 		<en>{#server}» Sorry, you can not contact us!</en>
 		<de>{#server}» Sie können uns leider nicht kontaktieren!</de>
+		<ru>{#server}» Контактной информации пока нет!</ru>
 	</slash_contact_chat_message_no_contact>
 
 
 	<slash_masteradmins_description>
 		<en>Displays a list of active MasterAdmins</en>
 		<de>Zeigt eine Liste der aktiven MasterAdmins an</de>
+		<ru>Показывает владельцев онлайн</ru>
 	</slash_masteradmins_description>
 
 	<slash_masteradmins_window_title>
 		<en>Current active MasterAdmins</en>
 		<de>Derzeit aktive MasterAdmins</de>
+		<ru>Владельцы онлайн</ru>
 	</slash_masteradmins_window_title>
 
 
 	<slash_admins_description>
 		<en>Displays a list of current Admins</en>
 		<de>Zeigt eine Liste der aktiven Admins an</de>
+		<ru>Показывает администраторов онлайн</ru>
 	</slash_admins_description>
 
 	<slash_admins_window_title>
 		<en>Current active Admins</en>
 		<de>Derzeit aktive Admins</de>
+		<ru>Администраторы онлайн</ru>
 	</slash_admins_window_title>
 
 
 	<slash_operators_description>
 		<en>Displays a list of current Operators</en>
 		<de>Zeigt eine Liste der aktiven Operator an</de>
+		<ru>Показывает помощников онлайн</ru>
 	</slash_operators_description>
 
 	<slash_operators_window_title>
 		<en>Current active Operators</en>
 		<de>Derzeit aktive Operators</de>
+		<ru>Помощники онлайн</ru>
 	</slash_operators_window_title>
 
 
 	<slash_plugins_description>
 		<en>Displays list of active plugins</en>
 		<de>Zeigt eine List von aktiven Plug-ins an</de>
+		<ru>Показывает список активных плагинов</ru>
 	</slash_plugins_description>
 
 	<slash_plugins_heading_filename>
 		<en>Filename</en>
 		<de>Dateiname</de>
+		<ru>Имя</ru>
 	</slash_plugins_heading_filename>
 
 	<slash_plugins_heading_description>
 		<en>Description</en>
 		<de>Beschreibung</de>
+		<ru>Описание</ru>
 	</slash_plugins_heading_description>
 
 	<slash_plugins_heading_version_build>
 		<en>Version (Build)</en>
 		<de>Version (Build)</de>
+		<ru>Версия (Сборка)</ru>
 	</slash_plugins_heading_version_build>
 
 	<slash_plugins_window_title>
 		<en>Currently active plugins</en>
 		<de>Derzeit aktivierte Plug-ins</de>
+		<ru>Активные плагины</ru>
 	</slash_plugins_window_title>
 
 
 	<slash_time_description>
 		<en>Shows current server time and date</en>
 		<de>Zeigt die aktuelle Serverzeit und Datum an</de>
+		<ru>Показывает дату и время сервера</ru>
 	</slash_time_description>
 
 	<slash_time_chat_message>
 		<en>{#server}» Current Server Time: {#highlite}{1}{#server} on {#highlite}{2}</en>
 		<de>{#server}» Aktuelle Serverzeit: {#highlite}{1}{#server} am {#highlite}{2}</de>
+		<ru>{#server}» Сейчас на сервере: {#highlite}{1}{#server} на {#highlite}{2}</ru>
 	</slash_time_chat_message>
 
 
 	<slash_uptime_description>
 		<en>Shows the server uptime</en>
 		<de>Zeigt die Betriebszeit vom Server</de>
+		<ru>Показывает время работы сервера</ru>
 	</slash_uptime_description>
 
 	<slash_uptime_chat_message>
 		<en>{#server}» Server Uptime: {#highlite}{1}</en>
 		<de>{#server}» Server aktiv seit: {#highlite}{1}</de>
+		<ru>{#server}» Сервер онлайн уже: {#highlite}{1}</ru>
 	</slash_uptime_chat_message>
 </locales>
