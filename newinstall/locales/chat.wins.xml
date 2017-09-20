@@ -3,10 +3,12 @@
 	<plugin_description>
 		<en>Shows wins for current or given online player</en>
 		<de>Zeigt an wieviele Rennen du oder der angegebene Spieler bereits gewonnen hast</de>
+		<ru>Показывает твои победы, либо любого другого игрока</ru>
 	</plugin_description>
 	
 	<message_player_not_found>
 		<en>{#server}» {#error}Given player login {#highlite}{1}{#error} not found!</en>
 		<de>{#server}» {#error}Der angegebene Spieler {#highlite}{1}{#error} wurde nicht gefunden!</de>
+		<ru>{#server}» {#error}Игрок с логином {#highlite}{1}{#error} не найден!</ru>
 	</message_player_not_found>
 </locales>
