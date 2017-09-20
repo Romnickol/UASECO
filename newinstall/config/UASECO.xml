@@ -26,6 +26,7 @@
 	//-->
 	<dbms>
 		<host>localhost</host>
+		<port>3306</port>		
 		<login>LOGIN</login>
 		<password>PASSWORD</password>
 		<database>DATABASE</database>
