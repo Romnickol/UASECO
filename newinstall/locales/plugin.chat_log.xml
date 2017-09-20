@@ -9,15 +9,18 @@
 	<plugin_description>
 		<en>Displays log of recent chat messages</en>
 		<de>Zeigt den Chatverlauf an</de>
+		<ru>Показывает историю сообщений чата</ru>
 	</plugin_description>
 
 	<info_message>
 		<en>Forgot what someone said? Use "/chatlog" to check the chat history!</en>
 		<de>Vergessen was jemand geschrieben hat? Gebe "/chatlog" ein, um es herauszufinden!</de>
+		<ru>Забыли, что было в чате? Набери "/chatlog" и посмотри историю!</ru>
 	</info_message>
 
 	<message_no_history>
 		<en>{#server}» {#error}No chat history found!</en>
 		<de>{#server}» {#error}Kein Chatverlauf gefunden!</de>
+		<ru>{#server}» {#error}В чате еще ничего не происходило.</ru>
 	</message_no_history>
 </locales>
