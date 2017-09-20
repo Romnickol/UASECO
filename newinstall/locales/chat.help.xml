@@ -13,9 +13,9 @@
 	</plugin_description>
 
 	<slash_help_description>
-		<en>Displays help for available commands.</en>
+		<en>Displays help for available commands</en>
 		<de>Zeigt eine Übersicht über alle Chatbefehle</de>
-		<ru>Показывает справку по доступным командам чата.</ru>
+		<ru>Показывает справку по доступным командам чата</ru>
 	</slash_help_description>
 
 	<help_window_title>
