@@ -9,5 +9,6 @@
 	<plugin_description>
 		<en>Builds a chat message starting with the nickname from player.</en>
 		<de>Sendet eine Chatnachricht die mit dem Nickname des Spielers beginnt.</de>
+		<ru>Выводит в чат сообщение от игрока, поместив в начале его ник.</ru>
 	</plugin_description>
 </locales>
