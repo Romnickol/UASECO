@@ -8,11 +8,13 @@
 
 	<plugin_description>
 		<en>Shows the next better ranked player.</en>
-		<de>Shows the next better ranked player.</de>
+		<de>Shows the next better ranked player.</de> <!-- WTF? -->
+		<ru>Показывает ближайшего по рангу игрока.</ru>
 	</plugin_description>
 
 	<info_msg>
 		<en>Looking for the next better ranked player to beat?  Use "/nextrank"!</en>
 		<de>Du fragst dich, welcher Spieler den nächstbesseren Serverrang hat? Gebe "/nextrank" ein um es herauszufinden!</de>
+		<ru>Ищешь, кто выше тебя по рангу? Набери "/nextrank"!</ru>
 	</info_msg>
 </locales>
