@@ -9,67 +9,80 @@
 	<yes>
 		<en>yes</en>
 		<de>ja</de>
+		<ru>да</ru>
 	</yes>
 
 	<no>
 		<en>no</en>
 		<de>nein</de>
+		<ru>нет</ru>
 	</no>
 
 	<enabled>
 		<en>enabled</en>
 		<de>eingeschaltet</de>
+		<ru>включён</ru>
 	</enabled>
 
 	<disabled>
 		<en>disabled</en>
 		<de>ausgeschaltet</de>
+		<ru>выключен</ru>
 	</disabled>
 
 	<default>
 		<en>default</en>
 		<de>standard</de>
+		<ru>по умолчанию</ru>
 	</default>
 
 	<medal_author>
 		<en>author medal</en>
 		<de>Autor-Medaille</de>
+		<ru>Авторская медаль</ru>
 	</medal_author>
 
 	<medal_gold>
 		<en>gold medal</en>
 		<de>Gold-Medaille</de>
+		<ru>Золотая медаль</ru>
 	</medal_gold>
 
 	<medal_silver>
 		<en>silver medal</en>
 		<de>Silber-Medaille</de>
+		<ru>Серебряная медаль</ru>
 	</medal_silver>
 
 	<medal_bronze>
 		<en>bronze medal</en>
 		<de>Bronze-Medaille</de>
+		<ru>Бронзовая медаль</ru>
 	</medal_bronze>
 
 	<insufficient_rights>
 		<en>{#error}You dont have the required admin rights to do that!</en>
 		<de>{#error}Du hast nicht ausreichende Rechte um dies zu tun!</de>
+		<ru>{#error}У тебя недостаточно прав для этой команды!</ru>
 	</insufficient_rights>
 
 	<!-- init messages -->
 	<startup>
 		<en>{#server}» {#highlite}UASECO/{1}{#server} running on {#highlite}{2}{#server}:{#highlite}{3}{#server}</en>
 		<de>{#server}» {#highlite}UASECO/{1}{#server} laufend auf {#highlite}{2}{#server}:{#highlite}{3}{#server}</de>
+		<ru>{#server}» {#highlite}Система UASECO/{1}{#server} работает на {#highlite}{2}{#server}:{#highlite}{3}{#server}</ru>
 	</startup>
 
 	<welcome>
 		<en>{#server}» {#welcome}Welcome {#highlite}{1}{#welcome} to {#highlite}{2}$z$s{br}{#server}» {#welcome}This server uses {#highlite}UASECO/{3}{#welcome} to manage your records.</en>
 		<de>{#server}» {#welcome}Willkommen {#highlite}{1}{#welcome} auf {#highlite}{2}$z$s{br}{#server}» {#welcome}Dieser Server verwendet {#highlite}UASECO/{3}{#welcome} zur Verwaltung deiner Rekorde.</de>
+		<ru>{#server}» {#highlite}{1}{#welcome}, добро пожаловать на {#highlite}{2}$z$s{br}{#server}» {#welcome}На этом сервере работает {#highlite}UASECO/{3}{#welcome} для управления системой.</ru>
 	</welcome>
 
 	<player_warning>
 		<en>$s{#welcome}This is an administrative warning.{br}{br}$gWhatever you wrote is against our server's policy.{br}Not respecting other players, or{br}using offensive language might result in a {#welcome}kick, or ban {#message}the next time.{br}{br}$gThe server administrators.</en>
 		<de>$s{#welcome}Dies ist eine Warnung eines Admins oder Operator.{br}{br}$gWas auch immer du geschrieben hast, ist gegen die Regeln unseres Servers.{br}Das Nichtrespektieren anderer Spieler, Beleidigung, Hassreden oder Hetze wird das nächste mal einen {#welcome}Kick oder Ban {#message} zur Folge haben.{br}{br}$gDie Serveradministratoren.</de>
+		<ru>$s{#welcome}Ты получил предупреждение.{br}{br}$gТо, что ты сделал, противоречит правилам сервера.{br}Неуважение к другим игрокам, {br}ругань в чате могут привести к {#welcome}кику, или бану {#message}в сл. раз.{br}{br}$gНе будь плохишом.</ru>
 	</player_warning>
 
 	<!-- record misc. messages -->
@@ -84,27 +97,32 @@
 	<no_records_found>
 		<en>{#server}» {#error}No records found!</en>
 		<de>{#server}» {#error}Keine Rekorde gefunden!</de>
+		<ru>{#server}» {#error}Рекордов пока нет!</ru>
 	</no_records_found>
 
 	<!-- record relation messages -->
 	<first_record>
 		<en>{#server}» {#record}The first Local record is: </en>
 		<de>{#server}» {#record}Der erste lokale Rekord ist: </de>
+		<ru>{#server}» {#record}Первый локальный рекорд: </ru>
 	</first_record>
 
 	<last_record>
 		<en>{#server}» {#record}The last Local record is: </en>
 		<de>{#server}» {#record}Der letzte lokale Rekord ist: </de>
+		<ru>{#server}» {#record}Последний локальный рекорд: </ru>
 	</last_record>
 
 	<diff_record>
 		<en>{#server}» {#record}Difference between {1}{#record} and {2}{#record} is: {#highlite}{3}</en>
 		<de>{#server}» {#record}Differenz zwischen {1}{#record} und {2}{#record} ist: {#highlite}{3}</de>
+		<ru>{#server}» {#record}Разница между {1}{#record} и {2}{#record} рекордами: {#highlite}{3}</ru>
 	</diff_record>
 
 	<summary>
 		<en>{#server}» {#highlite}{1} $z$s{#record}has {#highlite}{2}{#record} Local records, the top {3} being: </en>
 		<de>{#server}» {#highlite}{1} $z$s{#record}hat {#highlite}{2}{#record} lokale Rekorde, die Top {3} sind: </de>
+		<ru>{#server}» {#highlite}{1} $z$s{#record}поставил {#highlite}{2}{#record} локальных рекордов, из них {3} лучших: </ru>
 	</summary>
 
 	<sum_entry>
@@ -120,136 +138,162 @@
 	<wins>
 		<en>{#server}» {#record}You have already won {#highlite}{1}{#record} races</en>
 		<de>{#server}» {#record}Du hast bereits {#highlite}{1}{#record} Rennen gewonnen</de>
+		<ru>{#server}» {#record}Вы уже выиграли {#highlite}{1}{#record} гонок!</ru>
 	</wins>
 
 	<wins_other>
 		<en>{#server}» {#record}Player {#highlite}{1}{#record} has won {#highlite}{2}{#record} races</en>
 		<de>{#server}» {#record}{#highlite}{1}{#record} hat bereits {#highlite}{2}{#record} Rennen gewonnen</de>
+		<ru>{#server}» {#record}Игрок {#highlite}{1}{#record} выиграл {#highlite}{2}{#record} гонок</ru>
 	</wins_other>
 
 	<win_new>
 		<en>{#server}» {#record}Congratulations, you won your {#highlite}{1}{#record}. race!</en>
 		<de>{#server}» {#record}Glückwunsch, du hast dein {#highlite}{1}{#record}. Rennen gewonnen!</de>
+		<ru>{#server}» {#record}Поздравляем, ты выиграл {#highlite}{1}{#record} гонку!</ru>
 	</win_new>
 
 	<win_multi>
 		<en>{#server}» {#record}Congratulations, {#highlite}{1}{#record} won his/her {#highlite}{2}{#record}. race!</en>
 		<de>{#server}» {#record}Glückwunsch, {#highlite}{1}{#record} hat sein/ihr {#highlite}{2}{#record}. Rennen gewonnen!</de>
+		<ru>{#server}» {#record}Поздравляем игрока {#highlite}{1}{#record} с его {#highlite}{2}{#record} победой! Браво!</ru>
 	</win_multi>
 
 	<!-- muting messages -->
 	<mute>
 		<en>{#server}» Player {#highlite}{1}$z$s{#server} is muted!</en>
 		<de>{#server}» Spieler {#highlite}{1}$z$s{#server} ist stummgeschaltet!</de>
+		<ru>{#server}» Игроку {#highlite}{1}$z$s{#server} отключен чат!</ru>
 	</mute>
 
 	<unmute>
 		<en>{#server}» Player {#highlite}{1}$z$s{#server} is unmuted!</en>
 		<de>{#server}» Spieler {#highlite}{1}$z$s{#server} is nicht mehr stummgeschaltet!</de>
+		<ru>{#server}» Игроку {#highlite}{1}$z$s{#server} включен чат!</ru>
 	</unmute>
 
 	<muted>
 		<en>{#server}» {#highlite}{1}{#error} disabled because you are on the global mute list!</en>
 		<de>{#server}» {#highlite}{1}{#error} ausgeschaltet, weil du auf der globalen Stummschaltliste (mutelist) bist!</de>
+		<ru>{#server}» Игроку {#highlite}{1}{#error} отключен чат, поскольку он находится в мировом списке мьютов!</ru>
 	</muted>
 
 	<!-- playtime/map messages -->
 	<playtime>
 		<en>{#server}» Current map {#highlite}{1}{#server} has been played for {#highlite}{2}</en>
 		<de>{#server}» Aktuelle map {#highlite}{1}{#server} wurde bereits {#highlite}{2}{#server} gespielt</de>
+		<ru>{#server}» Эта карта {#highlite}{1}{#server} идет уже {#highlite}{2}</ru>
 	</playtime>
 
 	<playtime_finish>
 		<en>{#server}» Current map {#highlite}{1}{#server} finished after {#highlite}{2}</en>
 		<de>{#server}» Aktuelle Map {#highlite}{1}{#server} finished after {#highlite}{2}</de>
+		<ru>{#server}» Эта карта {#highlite}{1}{#server} закончена после {#highlite}{2} {#server}минут.</ru>
 	</playtime_finish>
 
 	<playtime_replay>
 		<en> {#server}({#highlite}{1}{#server} replay{2}, total {#highlite}{3}{#server})</en>
 		<de> {#server}({#highlite}{1}{#server} replay{2}, insgesamt {#highlite}{3}{#server})</de>
+		<ru> {#server}({#highlite}{1}{#server} реплей{2}, всего {#highlite}{3}{#server})</ru>
 	</playtime_replay>
 
 	<map>
 		<en>{#server}» Current map {#highlite}{1} {#server}by {#highlite}{2} {#server}Author: {#highlite}{3} {#server}Gold: {#highlite}{4} {#server}Silver: {#highlite}{5} {#server}Bronze: {#highlite}{6} {#server}Cost: {#highlite}{7}</en>
 		<de>{#server}» Aktuelle Map {#highlite}{1} {#server}von {#highlite}{2} {#server}Autor: {#highlite}{3} {#server}Gold: {#highlite}{4} {#server}Silber: {#highlite}{5} {#server}Bronze: {#highlite}{6} {#server}Kosten: {#highlite}{7}</de>
+		<ru>{#server}» Эта карта: {#highlite}{1} {#server}в {#highlite}{2} {#server}Автор: {#highlite}{3} {#server}Золотая медаль: {#highlite}{4} {#server}Серебрянная медаль: {#highlite}{5} {#server}Бронзовая медаль: {#highlite}{6} {#server}Цена: {#highlite}{7}</ru>
 	</map>
 
 	<current_map>
 		<en>{#server}» Current map {#highlite}{1} {#server}by {#highlite}{2} {#server}Author: {#highlite}{3}</en>
 		<de>{#server}» Aktuelle Map {#highlite}{1} {#server}von {#highlite}{2} {#server}Autor: {#highlite}{3}</de>
+		<ru>{#server}» Эта карта: {#highlite}{1} {#server}в {#highlite}{2} {#server}Автор: {#highlite}{3}</ru>
 	</current_map>
 
 	<next_map>
 		<en>{#server}» The next Map will be: {#timelite}[{1}] {#highlite}{2}</en>
 		<de>{#server}» Die nächste Map: {#timelite}[{1}] {#highlite}{2}</de>
+		<ru>{#server}» Следующая карта: {#timelite}[{1}] {#highlite}{2}</ru>
 	</next_map>
 
 	<!-- relay messages -->
 	<no_relays>
 		<en>{#server}» {#error}No relay servers connected</en>
 		<de>{#server}» {#error}Keine Relayserver verbunden</de>
+		<ru>{#server}» {#error}Нет подключенных реле-серверов.</ru>
 	</no_relays>
 
 	<relaymaster>
 		<en>{#server}» This server relays master server: {#highlite}{1}{#server} ({#highlite}{2}{#server})</en>
 		<de>{#server}» Dieser Relayserver gehört zu Masterserver: {#highlite}{1}{#server} ({#highlite}{2}{#server})</de>
+		<ru>{#server}» Это реле-сервер. Игровой сервер: {#highlite}{1}{#server} ({#highlite}{2}{#server})</ru>
 	</relaymaster>
 
 	<notonrelay>
 		<en>{#server}» {#error}Command unavailable on relay server</en>
 		<de>{#server}» {#error}Dieses Kommando ist nicht verfügbar auf Relayservern</de>
+		<ru>{#server}» {#error}Эта команда недоступна на реле-сервер.</ru>
 	</notonrelay>
 
 	<!-- connection messages -->
 	<banip_dialog>
 		<en>{#welcome}Your IP was banned from this server.$z</en>
 		<de>{#welcome}Deine IP wurde auf diesem Server gebannt.$z</de>
+		<ru>{#welcome}Ваш IP-адрес был забанен на этом сервере.$z</ru>
 	</banip_dialog>
 
 	<banip_error>
 		<en>{#welcome}Could not connect:{br}{br}Your IP was banned from this server!</en>
 		<de>{#welcome}Verbindung nicht möglich:{br}{br}Deine IP wurde auf diesem Server gebannt!</de>
+		<ru>{#welcome}Невозможно соединиться:{br}{br}Ваш IP-адрес заблокирован на этом сервере!</ru>
 	</banip_error>
 
 	<client_dialog>
 		<en>{#welcome}Obsolete client version, please $l[http://www.tm-forum.com/viewtopic.php?p=139752#p139752]upgrade$l.$z</en>
 		<de>{#welcome}Veraltete Spielversion, bitte $l[http://www.tm-forum.com/viewtopic.php?p=139752#p139752]updaten$l.$z</de>
+		<ru>{#welcome}Устаревшая версия клиента, полажуйста, $l[http://www.tm-forum.com/viewtopic.php?p=139752#p139752]обновитесь$l.$z</ru>
 	</client_dialog>
 
 	<client_error>
 		<en>{#welcome}Obsolete client version!{br}Please upgrade to the $l[http://www.tm-forum.com/viewtopic.php?p=139752#p139752]latest version$l.</en>
 		<de>{#welcome}Veraltete Spielversion!{br}Bitte update auf die $l[http://www.tm-forum.com/viewtopic.php?p=139752#p139752]neueste Version$l.</de>
+		<ru>{#welcome}Устаревшая версия клиента!{br}Обновитесь на $l[http://www.tm-forum.com/viewtopic.php?p=139752#p139752]свежую версию$l.</ru>
 	</client_error>
 
 	<connect_dialog>
 		<en>{#welcome}Connection problem, please retry.$z</en>
 		<de>{#welcome}Verbindungsproblem, bitte versuche es erneut.$z</de>
+		<ru>{#welcome}Проблема с соединением, попробуй еще раз.$z</ru>
 	</connect_dialog>
 
 	<connect_error>
 		<en>{#welcome}$sThis is an administrative notice.$z{br}{br}UASECO encountered a very rare player connection{br}problem. Please re-join the server to correct it.{br}Apologies for the inconvenience.{br}{br}$sThe server administrators.</en>
 		<de>{#welcome}$sAchtung:$z{br}{br}UASECO hat ein äußerst seltenes Verbindungsproblem bei der Verbindung eines Spielers festgestellt. Bitte versuche erneut auf den Server zu kommen, um den Fehler zu beheben.{br}Entschuldigung für die Unannehmlichkeiten.{br}{br}$sDie Serveradministratoren.</de>
+		<ru>{#welcome}$sСистемное уведомление.$z{br}{br}UASECO столкнулось с очень редкой проблемой подключения{br}игрока. Пожалуйста, перезайдите на сервер.{br}Приносим свои извинения.{br}{br}$sАдминистраторы.</ru>
 	</connect_error>
 
 	<!-- miscellaneous messages -->
 	<song>
 		<en>{#server}» Map {#highlite}{1} {#server}plays song: {#highlite}{2}</en>
 		<de>{#server}» Die Map {#highlite}{1} {#server}spielt folgenden Song: {#highlite}{2}</de>
+		<ru>{#server}» Карта {#highlite}{1} {#server} содержит песню: {#highlite}{2}</ru>
 	</song>
 
 	<mod>
 		<en>{#server}» Map {#highlite}{1} {#server}uses mod: {#highlite}{2} {#server}({#highlite}{3}{#server})</en>
 		<de>{#server}» Die Map {#highlite}{1} {#server}verwendet Mod: {#highlite}{2} {#server}({#highlite}{3}{#server})</de>
+		<ru>{#server}» Карта {#highlite}{1} {#server} содержит мод: {#highlite}{2} {#server}({#highlite}{3}{#server})</ru>
 	</mod>
 
 	<show_planets>
 		<en>{#server}» Server {#highlite}{1}$z$s {#server}owns {#highlite}{2} {#server}planets</en>
 		<de>{#server}» Der Server {#highlite}{1}$z$s {#server}besitzt {#highlite}{2} {#server}Planets</de>
+		<ru>#server}» Баланс {#highlite}{1}$z$s {#server} = {#highlite}{2}.- {#server} планет.</ru>
 	</show_planets>
 
 	<round>
 		<en>{#server}» $n{#message}Round {#highlite}{1}{#message}: </en>
 		<de>{#server}» $n{#message}Runde {#highlite}{1}{#message}: </de>
+		<ru>{#server}» $n{#message}Раунд {#highlite}{1}{#message}: </ru>
 	</round>
 
 
@@ -258,10 +302,12 @@
 	<header_page>
 		<en>Page</en>
 		<de>Seite</de>
+		<ru>Страница</ru>
 	</header_page>
 
 	<header_of>
 		<en>of</en>
 		<de>von</de>
+		<ru>из</ru>
 	</header_of>
 </locales>
