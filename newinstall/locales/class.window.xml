@@ -9,15 +9,18 @@
 	<windowlist_description>
 		<en>Handles actions for Manialink windows created with the Class Window.</en>
 		<de>Behandelt aktionen für Manialink-Fenster die mit der "Class Window" erstellt wurden.</de>
+		<ru>Управляет окнами Маниалинка, созданными с помощью "Class Window".</ru>
 	</windowlist_description>
 
 	<window_description>
 		<en>Provides a comfortable, configurable styled Manialink window.</en>
 		<de>Bietet ein komfortables und konfigurierbares Manialink-Fenster.</de>
+		<ru>Показывает красивые, настраиваеиые окна Маниалинк.</ru>
 	</window_description>
 
 	<slash_lastwin>
 		<en>Re-opens the last closed window.</en>
 		<de>Öffnet das zuletzt geöffnete Fentser erneut.</de>
+		<ru>Открывает последнее закрытое окно.</ru>
 	</slash_lastwin>
 </locales>
