@@ -9,15 +9,19 @@
 	<plugin_description>
 		<en>Displays help for public chat commands</en>
 		<de>Zeigt eine Liste der verfügbaren Chatbefehle</de>
+		<ru>Показывает справку по общедоступным командам чата</ru>
 	</plugin_description>
 
 	<slash_help_description>
 		<en>Displays help for available commands.</en>
 		<de>Zeigt eine Übersicht über alle Chatbefehle</de>
+		<ru>Показывает справку по доступным командам чата.</ru>
 	</slash_help_description>
 
 	<help_window_title>
 		<en>Currently supported chat commands</en>
 		<de>Aktuell unterstützte Chatbefehle</de>
+		<ru>Доступные команды чата</ru>
 	</help_window_title>
 </locales>
+
