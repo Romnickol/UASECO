@@ -9,30 +9,36 @@
 	<plugin_description>
 		<en>Shows ranked records and their relations on the current map.</en>
 		<de>Zeigt verschiedene Rekorde auf dieser Map und vergleicht diese.</de>
+		<ru>Показывает рекорды с рангами и их положение на этой карте.</ru>
 	</plugin_description>
 
 	<firstrec>
 		<en>Shows first ranked record on current map</en>
 		<de>Zeigt den ersten Platz auf dieser Map an</de>
+		<ru>Показывает первый рекорд с рангом на этой карте</ru>
 	</firstrec>
 
 	<lastrec>
 		<en>Shows last ranked record on current map</en>
 		<de>Zeigt den letzten Platz auf dieser Map an</de>
+		<ru>Показывает последний рекорд с рангом на этой карте</ru>
 	</lastrec>
 
 	<nextrec>
 		<en>Shows next better ranked record to beat</en>
 		<de>Zeigt den nächstbesten Rekord auf diesem Server</de>
+		<ru>Показывает следующий рекорд с рангом</ru>
 	</nextrec>
 
 	<diffrec>
 		<en>Shows your difference to first ranked record</en>
 		<de>Zeigt die Differenz zum ersten Rekord auf diesem Server</de>
+		<ru>Показывает разницу твоего и первого рекорда с рангом</ru>
 	</diffrec>
 
 	<recrange>
 		<en>Shows difference first to last ranked record</en>
 		<de>Zeigt die Differenz vom ersten zum letzten Rekord an</de>
+		<ru>Показывает разницу первого и последнего рекордов с рангом</ru>
 	</recrange>
 </locales>
