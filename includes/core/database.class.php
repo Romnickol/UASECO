@@ -6,7 +6,7 @@
  *
  * ----------------------------------------------------------------------------------
  * Author:	undef.de
- * Date:	2017-08-18
+ * Date:	2017-05-31
  * Copyright:	2014 - 2017 by undef.de
  * ----------------------------------------------------------------------------------
  *
@@ -55,7 +55,7 @@ class Database extends mysqli {
 	public function __construct ($setup) {
 
 		// Connect to the DB
-		parent::__construct($setup['host'], $setup['login'], $setup['password'], $setup['database']);
+		parent::__construct($setup['host'], $setup['login'], $setup['password'], $setup['database'], $setup['port']);
 		if ($this->connect_error) {
 			trigger_error('[MySQL] Could not authenticate at MySQL server: ['. $this->connect_errno .'] '. $this->connect_error, E_USER_ERROR);
 		}
@@ -131,9 +131,9 @@ class Database extends mysqli {
 	#///////////////////////////////////////////////////////////////////////#
 	*/
 
-	public function query ($sql, $resultmode = MYSQLI_STORE_RESULT) {
+	public function query ($sql) {
 		$sql = str_replace($this->placeholder, $this->table_prefix, $sql);
-		return parent::query($sql, $resultmode);
+		return parent::query($sql);
 	}
 
 	/*
