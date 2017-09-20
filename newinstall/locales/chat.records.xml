@@ -3,40 +3,48 @@
 	<slash_recs>
 		<en>Displays all records on the current map.</en>
 		<de>Zeigt alle Rekorde auf der aktuellen Map an</de>
+		<ru>Показывает все рекорды игрока на этой карте.</ru>
 	</slash_recs>
 	
 	<slash_newrecs>
 		<en>Shows newly driven records</en>
 		<de>Zeigt neulich gefahrene Rekorde an</de>
+		<ru>Показывает новые рекорды</ru>
 	</slash_newrecs>
 	
 	<slash_liverecs>
 		<en>Shows records of online players</en>
 		<de>Zeigt die Rekorde der Spieler an, die gerade online sind</de>
+		<ru>Показывает рекорды тех, кто сейчас играет</ru>
 	</slash_liverecs>
 	
 	<slash_best>
 		<en>Displays your best records</en>
 		<de>Zeigt deine besten Rekorde an</de>
+		<ru>Показывает твои лучшие рекорды</ru>
 	</slash_best>
 	
 	<slash_worst>
 		<en>Displays your worst records</en>
 		<de>Zeigt deine schlechtesten Rekorde an</de>
+		<ru>Показывает твои худшие рекорды</ru>
 	</slash_worst>
 	
 	<slash_summary>
 		<en>Shows summary of all your records</en>
 		<de>Zeigt eine Zusammenfassung aller deiner Rekorde</de>
+		<ru>Показывает сводку твоих рекордов</ru>
 	</slash_summary>
 	
 	<slash_topsums>
 		<en>Displays top 100 of top-3 record holders</en>
 		<de>Zeigt die Top 100 der besten Top3 Rekordhalter</de>
+		<ru>Показывает топ-100 игроков с рекордами в топ-3</ru>
 	</slash_topsums>
 	
 	<slash_toprecs>
 		<en>Displays top 100 ranked records holders</en>
 		<de>Zeigt die Spieler mit der größten anzahl Rekorde an</de>
+		<ru>Показывает топ-100 рангов игроков</ru>
 	</slash_toprecs>
 </locales>
