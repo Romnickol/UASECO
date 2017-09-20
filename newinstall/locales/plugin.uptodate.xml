@@ -9,40 +9,48 @@
 	<plugin_description>
 		<en>Checks if there is a more recent version of UASECO at start-up &amp; MasterAdmin connect.</en>
 		<de>Überprüft die UASECO Version auf eine verfügbare Aktualisierung beim starten von UASECO und beim Beitritt von einem MasterAdmin.</de>
+		<ru>Проверяет, есть ли более новая версия UASECO при запуске сервера и входе владельца.</ru>
 	</plugin_description>
 
 	<chat_uptodate>
 		<en>Checks if there is a more recent version of UASECO.</en>
 		<de>Überprüft die UASECO Version auf eine verfügbare Aktualisierung.</de>
+		<ru>Проверяет, есть ли более новая версия UASECO.</ru>
 	</chat_uptodate>
 
 	<uptodate_ok>
 		<en>{#server}» {#message}This UASECO version {#highlite}{1}{#message} is up to date.</en>
 		<de>{#server}» {#message}Diese UASECO Version {#highlite}{1}{#message} ist auf dem neuesten Stand.</de>
+		<ru>{#server}» {#message}Установленная версия UASECO {#highlite}{1}{#message} актуальна.</ru>
 	</uptodate_ok>
 
 	<uptodate_new>
 		<en>{#server}» {#message}New UASECO version {#highlite}{1}{#message} available from {#highlite}{2}.</en>
 		<de>{#server}» {#message}Neue UASECO Version {#highlite}{1}{#message} verfügbar auf {#highlite}{2}.</de>
+		<ru>{#server}» {#message}Новая версия UASECO {#highlite}{1}{#message} доступна на {#highlite}{2}.</ru>
 	</uptodate_new>
 
 	<uptodate_failed>
 		<en>{#server}» {#error}Can not check UASECO version, connection was failed!</en>
 		<de>{#server}» {#error}Konnte keine Verbindung herstellen, um zu überprüfen ob eine neue UASECO Version vorliegt!</de>
+		<ru>{#server}» {#error}Невозможно проверить версию UASECO, сбой соединения!</ru>
 	</uptodate_failed>
 
 	<admin_merged>
 		<en>{#server}» {#highlite}{1}{#server} new login(s) merged into blacklist!</en>
 		<de>{#server}» {#highlite}{1}{#server} neue Spieler zur Blacklist hinzugefügt!</de>
+		<ru>{#server}» В черный список добавлено {#highlite}{1}{#server} логинов!</ru>
 	</admin_merged>
 
 	<admin_can_not_parse>
 		<en>{#server}» {#error}Error: Can not parse {#highlite}$I{1}{#error}!</en>
 		<de>{#server}» {#error}Error: Konnte {#highlite}$I{1}{#error} nicht analysieren!</de>
+		<ru>{#server}» {#error}Ошибка: невозможно обработать {#highlite}$I{1}{#error}!</ru>
 	</admin_can_not_parse>
 
 	<admin_can_not_access>
 		<en>{#server}» {#error}Error: Can not access {#highlite}$I$L{1}$L{#error}!</en>
 		<de>{#server}» {#error}Error: Konnte {#highlite}$I$L{1}$L{#error} nicht aufrufen!</de>
+		<ru>{#server}» {#error}Ошибка: невозможно открыть {#highlite}$I$L{1}$L{#error}!</ru>
 	</admin_can_not_access>
 </locales>
