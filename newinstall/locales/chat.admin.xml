@@ -9,196 +9,235 @@
 	<plugin_description>
 		<en>Provides regular admin commands</en>
 		<de>Bietet regulär Administrator Kommandos</de>
+		<ru>Предоставляет команды администраторов</ru>
 	</plugin_description>
 
 	<help>
 		<en>Shows all available /admin commands (chat)</en>
 		<de>Zeigt verfügbare /admin Kommandos (Chat)</de>
+		<ru>Показывает все доступные /admin-команды в чате</ru>
 	</help>
 
 	<helpall>
-		<en>Displays help for available /admin commands (Fenster)</en>
+		<en>Displays help for available /admin commands (Window)</en>
 		<de>Zeigt die Hilfe für verfügbare /admin Kommandos (Fenster)</de>
+		<ru>Справка о доступных /admin-коммандах (в окне).
 	</helpall>
 
 	<setservername>
 		<en>Changes the name of the server</en>
 		<de>Ändert den Namen des Servers</de>
+		<ru>Изменяет название сервера</ru>
 	</setservername>
 
 	<setcomment>
 		<en>Changes the server comment</en>
 		<de>Ändert das Kommtentar des Servers</de>
+		<ru>Изменяет комментарий сервера</ru>
 	</setcomment>
 
 	<setpwd>
 		<en>Set the player password</en>
 		<de>Setze das Spieler Passwort</de>
+		<ru>Устанавливает пароль для входа игроков</ru>
 	</setpwd>
 
 	<setspecpwd>
-		<en>Set the Zuschauer password</en>
+		<en>Set the spectators password</en>
 		<de>Setze das Zuschauer Passwort</de>
+		<ru>Устанавливает пароль для входа зрителей</ru>
 	</setspecpwd>
 
 	<setrefpwd>
 		<en>Changes the referee password</en>
 		<de>Ändert das Schiedsrichter Passwort</de>
+		<ru>Устанавливает пароль рефери</ru>
 	</setrefpwd>
 
 	<setmaxplayers>
 		<en>Sets a new maximum of players</en>
 		<de>Ändert die maximale Anzahl Spieler</de>
+		<ru>Устанавливает кол-во игроков на сервере</ru>
 	</setmaxplayers>
 
 	<setmaxspecs>
 		<en>Sets a new maximum of spectators</en>
 		<de>Ändert die maximale Anzahl Zuschauer</de>
+		<ru>Устанавливает кол-во зрителей на сервере</ru>		
 	</setmaxspecs>
 
 	<setgamemode>
 		<en>Sets next mode {timeattack, rounds, team, laps, cup, teamattack, knockout, doppler}</en>
 		<de>Stellt den nächsten Modus ein {timeattack, rounds, team, laps, cup, teamattack, knockout, doppler}</de>
+		<ru>Устанавливает следуюищй режим игры {На время - timeattack, Раунды - rounds, Команды - team, Круги - laps, Кубок - cup, teamattack, knockout, doppler}</ru>		
 	</setgamemode>
 
 	<setrefmode>
 		<en>Sets referee mode {0=top3,1=all}</en>
 		<de>Schaltet Zuschauermodus um {0=top3,1=alle}</de>
+		<ru>Устанавливает режим рефери {0 - топ-3, 1 - для всех}</ru>
 	</setrefmode>
 
 	<nextmap>
 		<en>Forces server to load next map</en>
 		<de>Erzwingt Wechsel zur nächsten Map</de>
+		<ru>Переход на следующую карту</ru>
 	</nextmap>
 
 	<skipmap>
 		<en>Forces server to load next map</en>
 		<de>Erzwingt Wechsel zur nächsten Map</de>
+		<ru>Переход на следующую карту</ru>		
 	</skipmap>
 
 	<previous>
 		<en>Forces server to load previous map</en>
 		<de>Erzwingt das Laden der vorigen Map</de>
+		<ru>Переход на предыдущую карту</ru>		
 	</previous>
 
 	<nextenv>
 		<en>Loads next map in same environment</en>
 		<de>Lädt die nächste Map mit der selben Umgebung</de>
+		<ru>Переход на следующую карту этого же окружения</ru>
 	</nextenv>
 
 	<restartmap>
 		<en>Restarts currently running map</en>
 		<de>Startet die aktuelle Map neu</de>
+		<ru>Перезапуск этой карты</ru>		
 	</restartmap>
 
 	<replaymap>
 		<en>Replays current map (via jukebox)</en>
 		<de>Wiederholt die Map (einreihung in die Jukebox)</de>
+		<ru>Повтор этой карты (через очередь)</ru>		
 	</replaymap>
 
 	<dropjukebox>
 		<en>Drops a map from the jukebox</en>
 		<de>Entfernt eine map von der Jukebox</de>
+		<ru>Убирает карту из очереди</ru>		
 	</dropjukebox>
 
 	<clearjukebox>
 		<en>Clears the entire jukebox</en>
 		<de>Leert die Jukebox</de>
+		<ru>Очищает очередь</ru>		
 	</clearjukebox>
 
 	<add>
 		<en>Adds maps directly from MX via MX-ID</en>
 		<de>Fügt Maps direkt direkt hinzu über die MX-ID</de>
+		<ru>Добавляет карту из MX по ее идентификатору</ru>		
 	</add>
 
 	<addthis>
 		<en>Adds current /add-ed map permanently</en>
 		<de>Fügt gerade ge-/add-ete Map dauerhaft hinzu</de>
+		<ru>Делает добавленную карту постоянной</ru>
 	</addthis>
 
 	<addlocal>
 		<en>Adds a local map (expects filename)</en>
 		<de>Fügt eine lokale map hinzu (erwartet Dateiname)</de>
+		<ru>Добаить локальную карту (по имени файла)</ru>		
 	</addlocal>
 
 	<warn>
 		<en>Sends a kick/ban warning to a player</en>
 		<de>Verwarnt einen Spieler</de>
+		<ru>Выдать предупреждение игроку</ru>
 	</warn>
 
 	<kick>
 		<en>Kicks a player from server</en>
 		<de>Schmeißt einen Spieler vom Server</de>
+		<ru>Кикнуть игрока с сервера</ru>
 	</kick>
 
 	<kickghost>
 		<en>Kicks a ghost player from server</en>
 		<de>Schmeißt einen "Ghost" Spieler vom Server</de> <!-- Ghost? -->
+		<ru>Кикнуть игрока-"призрака"</ru>
 	</kickghost>
 
 	<ban>
 		<en>Bans a player from server</en>
 		<de>Sperrt einen Spieler vom Server aus</de>
+		<ru>Забанить игрока</ru>
 	</ban>
 
 	<unban>
 		<en>Unbans a player from server</en>
 		<de>Entsperrt einen Spieler</de>
+		<ru>Разбанить игрока</ru>
 	</unban>
 
 	<banip>
 		<en>Bans an IP address from server</en>
 		<de>Sperrt eine IP Adresse vom Server aus</de>
+		<ru>Забанить IP адрес</ru>
 	</banip>
 
 	<unbanip>
 		<en>Unbans an IP address from server</en>
 		<de>Entsperrt eine IP Adresse</de>
+		<ru>Разбанить IP адрес</ru>
 	</unbanip>
 
 	<black>
 		<en>Blacklists a player from server</en>
 		<de>Setzt einen Spieler auf die schwarze Liste (blacklist)</de>
+		<ru>Занести игрока в чёрный список</ru>
 	</black>
 
 	<unblack>
 		<en>Unblacklists a player from server</en>
 		<de>Entfernt eine Spieler von der schwarzen Liste (blacklist)</de>
+		<ru>Убрать игрока из чёрного списка</ru>
 	</unblack>
 
 	<addguest>
 		<en>Adds a player to the guestlist</en>
 		<de>Setzt einen Spieler auf die Gästeliste (guestlist)</de>
+		<ru>Занести игрока в список гостей</ru>
 	</addguest>
 
 	<removeguest>
 		<en>Removes a player from the guestlist</en>
 		<de>Entfernt einen Spieler von der Gästeliste</de>
+		<ru>Убрать игрока из списка гостей</ru>
 	</removeguest>
 
 	<pass>
 		<en>Passes a chat-based or MX /add vote</en>
 		<de>Lässt eine Abstimmung mit "Ja" enden</de>
+		<ru>Утвердить голосование в чате</ru>
 	</pass>
 
 	<cancel>
 		<en>Cancels any running vote</en>
 		<de>Beendet eine Abstimmung</de>
+		<ru>Отменить любое голосование</ru>
 	</cancel>
 
 	<endround>
 		<en>Forces end of current round</en>
 		<de>Erzwingt Ende der aktuellen Runde</de>
+		<ru>Закончить этот раунд</ru>
 	</endround>
 
 	<players>
 		<en>Displays list of known players</en>
 		<de>Zeigt eine Liste mit bekannten Spielern</de>
+		<ru>Показать список всех игроков</ru>
 	</players>
 
 	<showbanlist>
 		<en>Displays current ban list</en>
 		<de>Zeigt die Liste mit gesperrten Spielern (banlist)</de>
+		<ru>Показать бан-лист</ru>
 	</showbanlist>
 
 	<showiplist>
