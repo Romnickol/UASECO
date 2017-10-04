@@ -243,321 +243,385 @@
 	<showiplist>
 		<en>Displays current banned IPs list</en>
 		<de>Zeigt die Liste mit gesperrten IPs</de>
+		<ru>Показать бан-лист IP-адресов</ru>
 	</showiplist>
 
 	<showblacklist>
 		<en>Displays current black list</en>
 		<de>Zeigt die schwarze Liste (blacklist)</de>
+		<ru>Показать чёрный список</ru>
 	</showblacklist>
 
 	<showguestlist>
 		<en>Displays current guest list</en>
 		<de>Zeigt die Gästeliste (guestlist)</de>
+		<ru>Показать список гостей</ru>
 	</showguestlist>
 
 	<writeiplist>
 		<en>Saves current banned IPs list (default: bannedips.xml)</en>
 		<de>Speichert die Liste mit gesperrten IPs (Standard: bannedips.xml)</de>
+		<ru>Сохранить список забаненых IP-адресов (обычно bannedips.xml)</ru>
 	</writeiplist>
 
 	<readiplist>
 		<en>Loads current banned IPs list (default: bannedips.xml)</en>
 		<de>Lädt die Liste mit gesperrten IPs (Standard: bannedips.xml)</de>
+		<ru>Загрузить список забаненых IP-адресов (обычно bannedips.xml)</ru>
 	</readiplist>
 
 	<writeblacklist>
 		<en>Saves current black list (default: blacklist.txt)</en>
 		<de>Speichert die aktuelle schwarze Liste (Standard: blacklist.txt)</de>
+		<ru>Сохранить чёрный список (обычно blacklist.txt)</ru>
 	</writeblacklist>
 
 	<readblacklist>
 		<en>Loads current black list (default: blacklist.txt)</en>
 		<de>Lädt die schwarze Liste (Standard: blacklist.txt)</de>
+		<ru>Загрузить чёрный список (обычно blacklist.txt)</ru>
 	</readblacklist>
 
 	<writeguestlist>
 		<en>Saves current guest list (default: guestlist.txt)</en>
 		<de>Speichert die aktuelle Gästeliste (Standard: guestlist.txt)</de>
+		<ru>Сохранить список гостей (обычно guestlist.txt)</ru>
 	</writeguestlist>
 
 	<readguestlist>
 		<en>Loads current guest list (default: guestlist.txt)</en>
 		<de>Lädt die aktuelle Gästeliste (Standard: guestlist.txt)</de>
+		<ru>Загрузить список гостей (обычно guestlist.txt)</ru>
 	</readguestlist>
 
 	<cleanbanlist>
 		<en>Cleans current ban list</en>
 		<de>Leert die aktuelle Liste mit gesperrten Spielern</de>
+		<ru>Очистить бан-лист</ru>
 	</cleanbanlist>
 
 	<cleaniplist>
 		<en>Cleans current banned IPs list</en>
 		<de>Leert die aktuelle Liste mit gesperrten IPs</de>
+		<ru>Очистить бан-лист</ru>
 	</cleaniplist>
 
 	<cleanblacklist>
 		<en>Cleans current black list</en>
 		<de>Leert die aktuelle schwarze Liste (blacklist)</de>
+		<ru>Очистить чёрный список</ru>
 	</cleanblacklist>
 
 	<cleanguestlist>
 		<en>Cleans current guest list</en>
 		<de>Leert die aktuelle Gästeliste (guestlist)</de>
+		<ru>Очистить список гостей</ru>
 	</cleanguestlist>
 
 	<mergegbl>
 		<en>Merges a global black list {URL}</en>
 		<de>importiert eine blacklist aus dem internet {url}</de>
+		<ru>Загрузить глобальный чёрный список из Сети: {url}</ru>
 	</mergegbl>
 
 	<access>
 		<en>Handles player access control (see: /admin access help</en>
 		<de>Behandelt Spieler Zugriffskontrolle (siehe /admin access help)</de>
+		<ru>Управление доступом игроков (см. /admin access help)</ru>
 	</access>
 
 	<writemaplist>
 		<en>Saves current map list (default: maplist.txt)</en>
 		<de>Schreibt die aktuelle Mapliste (Standard: maplist.txt)</de>
+		<ru>Сохранить плейлист (обычно maplist.txt)</ru>
 	</writemaplist>
 
 	<readmaplist>
 		<en>Loads the map list (default: maplist.txt)</en>
 		<de>Liest die Mapliste (Standard: maplist.txt)</de>
+		<ru>Загрузитьплейлист (обычно maplist.txt)</ru>
 	</readmaplist>
 
 	<shuffle>
 		<en>Randomizes current map list</en>
 		<de>Bringt Maps in eine Zufällige Reihenfolge</de>
+		<ru>Перетасовать плейлист</ru>
 	</shuffle>
 
 	<remove>
 		<en>Removes a map from rotation</en>
 		<de>Entfernt eine Map aus der Liste (nicht die Datei)</de>
+		<ru>Убрать карту из плейлиста (не удаление)</ru>
 	</remove>
 
 	<erase>
 		<en>Removes a map from rotation and deletes map file</en>
 		<de>Löscht eine Map vollständig (auch die Datei)</de>
+		<ru>Убрать карту из плейлиста и удалить её файл</ru>
 	</erase>
 
 	<removethis>
 		<en>Removes this map from rotation</en>
 		<de>Entfernt die aktuelle Map aus der Liste (nicht die Datei)</de>
+		<ru>Убрать эту карту из плейлиста (не удаление)</ru>
 	</removethis>
 
 	<erasethis>
 		<en>Removes this map from rotation and deletes map file</en>
 		<de>Löscht die aktuelle Map vollständig (auch die Datei)</de>
+		<ru>Убрать эту карту из плейлиста и удалить её файл</ru>
 	</erasethis>
 
 	<mute>
 		<en>Adds a player to global mute/ignore list</en>
 		<de>Schiebt einen Spieler auf die Ignorierliste (Stummschalten)</de>
+		<ru>Отключить чат игроку</ru>
 	</mute>
 
 	<unmute>
 		<en>Removes a player from global mute/ignore list</en>
 		<de>Entfernt einen Spieler von der Ignorierliste</de>
+		<ru>Вернуть чат игроку</ru>
 	</unmute>
 
 	<mutelist>
 		<en>Displays global mute/ignore list</en>
 		<de>Zeigt die Ignorierliste</de>
+		<ru>Показать список игроков без права писать в чат</ru>
 	</mutelist>
 
 	<cleanmutes>
 		<en>Cleans global mute/ignore list</en>
 		<de>Leert die Ignorierliste</de>
+		<ru>Очистить список игроков без права писать в чат</ru>
 	</cleanmutes>
 
 	<addadmin>
 		<en>Adds a new admin</en>
 		<de>Fügt einen Admin hinzu</de>
+		<ru>Добавить администратора</ru>
 	</addadmin>
 
 	<removeadmin>
 		<en>Removes an admin</en>
 		<de>Entfernt einen Admin</de>
+		<ru>Убрать администратора</ru>
 	</removeadmin>
 
 	<addop>
 		<en>Adds a new operator</en>
 		<de>Fügt einen Operator hinzu</de>
+		<ru>Добавить оператора</ru>
 	</addop>
 
 	<removeop>
 		<en>Removes an operator</en>
 		<de>Entfernt einen Operator</de>
+		<ru>Убрать оператора</ru>
 	</removeop>
 
 	<listmasters>
 		<en>Displays current masteradmin list</en>
 		<de>Zeigt Liste mit allen MasterAdmins</de>
+		<ru>Показать список мастерадминов</ru>
 	</listmasters>
 
 	<listadmins>
 		<en>Displays current admin list</en>
 		<de>Zeigt Liste mit allen Admins</de>
+		<ru>Показать список администраторов</ru>
 	</listadmins>
 
 	<listops>
 		<en>Displays current operator list</en>
 		<de>Zeigt Liste mit allen Operatoren</de>
+		<ru>Показать список операторов</ru>
 	</listops>
 
 	<adminability>
 		<en>Shows/changes admin ability {ON/OFF}</en>
 		<de>Zeigt/ändert Admin Rechte {ON/OFF}</de>
+		<ru>Показать/изменить разрешения администратора {ON/OFF}</ru>
 	</adminability>
 
 	<opability>
 		<en>Shows/changes operator ability {ON/OFF}</en>
 		<de>Zeigt/ändert Operator Rechte {ON/OFF}</de>
+		<ru>Показать/изменить разрешения оператора {ON/OFF}</ru>
 	</opability>
 
 	<listabilities>
 		<en>Displays current abilities list</en>
 		<de>Zeigt die aktuellen Rechte</de>
+		<ru>Показать текущий список возможностей</ru>
 	</listabilities>
 
 	<writeabilities>
 		<en>Saves current abilities list file (default: config/adminops.xml)</en>
 		<de>Schreibt die Rechte von Admins/Ops (Standard: config/adminops.xml)</de>
+		<ru>Сохранить текущий список возможностей (обычно config/adminops.xml)</ru>
 	</writeabilities>
 
 	<readabilities>
 		<en>Loads current abilities list file (def: config/adminops.xml)</en>
 		<de>Lädt die Rechte von Admins/Ops Datei (Standard: config/adminops.xml)</de>
+		<ru>Загрузить текущий список возможностей (обычно config/adminops.xml)</ru>
 	</readabilities>
 
 	<wall>
 		<en>Displays popup message to all players</en>
 		<de>Zeigt allen Spielern eine Popupnachricht</de>
+		<ru>Отправить всплывающее сообщение всем игрокам</ru>
 	</wall>
 
 	<delrec>
 		<en>Deletes specific record on current map</en>
 		<de>Löscht einen Rekord auf der aktuellen Map</de>
+		<ru>Удалить конкретный рекорд на этой карте</ru>
 	</delrec>
 
 	<prunerecs>
 		<en>Deletes records for specified map</en>
 		<de>Löscht Rekorde für eine angegebene Map</de>
+		<ru>Очистить рекорды на определенной карте</ru>
 	</prunerecs>
 
 	<amdl>
 		<en>Sets AllowMapDownload {ON/OFF}</en>
 		<de>Erlaube Map Download {ON/OFF}</de>
+		<ru>Разрешить скачивать карты? {ON/OFF}</ru>
 	</amdl>
 
 	<autotime>
 		<en>Sets Auto TimeLimit {ON/OFF}</en>
 		<de>Automatisches Zeitlimit? {ON/OFF}</de>
+		<ru>Включить автоматический расчёт времени на раунд? {ON/OFF}</ru>
 	</autotime>
 
 	<disablerespawn>
 		<en>Disables respawn at CPs {ON/OFF}</en>
 		<de>Verbiete respawn bei Checkpoints {ON/OFF}</de>
+		<ru>Отключить респаун на чекпоинтах? {ON/OFF}</ru>
 	</disablerespawn>
 
 	<forceshowopp>
 		<en>Forces to show opponents {NumberOfOpponents/ALL/OFF}</en>
 		<de>Erzwinge das Anzeigen der Gegner {AnzahlGegner/ALLE/AUS}</de>
+		<ru>Отключить возможность скрывать оппонентов? {ON/OFF}</ru>
 	</forceshowopp>
 
 	<scorepanel>
 		<en>Shows automatic scorepanel {ON/OFF}</en>
 		<de>Automatisches Scorepanel (Zeit/Punktestand) {ON/OFF}</de>
+		<ru>Показывать серверную таблицу очков в конце раунда? {ON/OFF}</ru>
 	</scorepanel>
 
 	<roundsfinish>
 		<en>Shows rounds panel upon first finish {ON/OFF}</en>
 		<de>Zeige die Rundenpunkte nach dem ersten ins Ziel gefahrenen Gegner {ON/OFF}</de>
+		<ru>Показывать панель раундов до первого финиша? {ON/OFF}</ru>
 	</roundsfinish>
 
 	<forceteam>
 		<en>Forces player into {Blue} or {Red} team</en>
 		<de>Zwinge Spiele in Team zu wechseln: {Blue/Red}</de>
+		<ru>Перевести игрока в команду {Blue/Red}</ru>
 	</forceteam>
 
 	<forcespec>
 		<en>Forces player into free spectator</en>
 		<de>Zwinge Spieler zum Zuschauermodus</de>
+		<ru>Перевести игрока в зрители</ru>
 	</forcespec>
 
 	<specfree>
 		<en>Forces spectator into free camera mode</en>
 		<de>Zwinge Spieler in den Zuaschauermodus mit freier Kamera</de>
+		<ru>Перевести игрока в режим свободной камеры</ru>
 	</specfree>
 
 	<panel>
 		<en>Selects admin panel (see: /admin panel help)</en>
 		<de>Wählt ein Adminpanel Style (siehe: /admin panel help)</de>
+		<ru>Выбрать панель администратора (см. /admin panel help)</ru>
 	</panel>
 
 	<admpanel>
 		<en>Selects default admin panel</en>
 		<de>Wählt standard Adminpanel Style</de>
+		<ru>Выбрать панель администратора по умолчанию</ru>
 	</admpanel>
 
 	<panelbg>
 		<en>Selects default panel background</en>
 		<de>Wählt standard Panel Hintergrund</de>
+		<ru>Выбрать фон панелей по умолчанию</ru>
 	</panelbg>
 
 	<planets>
 		<en>Shows servers planets amount</en>
 		<de>Zeig wieviele Planets der Server besitzt</de>
+		<ru>Показать баланс сервера</ru>
 	</planets>
 
 	<pay>
 		<en>Pays server planets to login</en>
 		<de>Zahlt Planets an einen Spieler aus</de>
+		<ru>Выплатить планеты игроку (с баланса сервера)</ru>
 	</pay>
 
 	<relays>
 		<en>Displays relays list or shows relay master</en>
 		<de>Zeigt Relayserver liste oder welcher Server der Master ist</de>
+		<ru>Показать список подключенных серверов или мастер-сервер (если этот серверподключен к другому)</ru>
 	</relays>
 
 	<server>
 		<en>Displays servers detailed settings</en>
 		<de>Zeigt detaillierte Infos/Einstellungen</de>
+		<ru>Показать информацию и настройки сервера</ru>
 	</server>
 
 	<pm>
 		<en>Sends private message to all available admins</en>
 		<de>Sende eine private Nachricht an alle verfügbaren Admins</de>
+		<ru>Отправить личное сообщение всем доступным администраторам</ru>
 	</pm>
 
 	<pmlog>
 		<en>Displays log of recent private admin messages</en>
 		<de>Zeigt die letzten privaten Admin Nachrichten</de>
+		<ru>Показать историю личных сообщений администраторов</ru>
 	</pmlog>
 
 	<call>
 		<en>Executes direct server call (see: /admin call help)</en>
-		<de></de> <!-- whats that?! -->
+		<de></de> <!-- whats that?! --> <!-- "use server's internal method or command" specified in command -->
+		<ru>Выполнить встроенную команду/метод сервера (см. /admin call help)</ru>
 	</call>
 
 	<unlock>
 		<en>Unlocks admin commands and features</en>
 		<de>Entsperrt Admin commands mit einem Passwort</de>
+		<ru>Разблокировать возможности и команды администратора</ru>
 	</unlock>
 
 	<debug>
 		<en>Toggles debugging output</en>
 		<de>Schaltet Entwicklermodus (debug) {ON/OFF}</de>
+		<ru>Вывод отладки {ON/OFF}</ru>
 	</debug>
 
 	<shutdown>
 		<en>Shuts down UASECO</en>
 		<de>Schaltet UASECO aus</de>
+		<ru>Отключить контроллер</ru>
 	</shutdown>
 
 	<shutdownall>
 		<en>Shuts down Server and UASECO</en>
 		<de>Schaltet UASECO und den Server aus</de>
+		<ru>Отключить сервер и контроллер</ru>
 	</shutdownall>
 
 	<message_setservername>
@@ -798,6 +862,7 @@
 	<message_no_open_vote>
 		<en>{#server}» {#error}There is no vote right now!</en>
 		<de>{#server}» {#error}Es läuft gerade keine Abstimmung!</de>
+		<ru>{#server}» {#error}Сейчас нет голосования!</ru>
 	</message_no_open_vote>
 
 	<message_vote_passed>
