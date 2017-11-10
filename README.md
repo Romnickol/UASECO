@@ -1,6 +1,6 @@
 UASECO
 ======
-Форк контроллера xaseco2 версии 1.03 товарищем под ником undef. Предназначен для серверов Trackmania².
+Контроллер для серверов Trackmania².
 
 Различия между оф. версией и форком
 -----------------------------------
@@ -13,6 +13,13 @@ UASECO
 Пока что все редми и пр. файлы идут на английском. Но это всегда можно исправить.
 
 > Если возникнут вопросы, загляните в <http://vk.com/wifhat>
+
+Sorry, I don't understand you!
+------------------------------
+This is Russian version of UASECO controller. It also contains some useful additions & fixes.
+
+Original README 
+---------------
 
 [![Latest Stable Version](https://poser.pugx.org/undeflabs/uaseco/v/stable?format=flat-square)](https://packagist.org/packages/undeflabs/uaseco)
 [![License](https://poser.pugx.org/undeflabs/uaseco/license?format=flat-square)](https://packagist.org/packages/undeflabs/uaseco)
