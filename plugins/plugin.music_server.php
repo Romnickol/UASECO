@@ -65,7 +65,7 @@ class PluginMusicServer extends Plugin {
 
 		$this->setAuthor('undef.de');
 		$this->setVersion('1.0.0');
-		$this->setBuild('2017-08-19');
+		$this->setBuild('2017-05-15');
 		$this->setCopyright('2014 - 2017 by undef.de');
 		$this->setDescription('Handles all server-controlled music.');
 
@@ -145,7 +145,7 @@ class PluginMusicServer extends Plugin {
 
 		$this->songs = array();
 		foreach ($settings['SONG_FILES'][0]['SONG'] as $song) {
-			$this->songs[] = str_replace(' ', '%20', $song);
+			$this->songs[] = $song;
 		}
 
 		// remove duplicates
@@ -313,14 +313,16 @@ class PluginMusicServer extends Plugin {
 
 							// Get the ID3 tag
 							$id3 = $getID3->analyze($tmpfname);
-
+							$aseco->console('[MusicServer] Parsed: '.$id3['tags']['vorbiscomment']['artist'][0].' - '.$id3['tags']['vorbiscomment']['title'][0]);
 							// Remove temporary file
 							unlink($tmpfname);
+
 						}
 					}
 					else {
 						// Get the ID3 tag
 						$id3 = $getID3->analyze($server.$song);
+							$aseco->console('[MusicServer] Parsed "'. $server.$song .'": '.$id3['tags']['vorbiscomment']['artist'][0].' - '.$id3['tags']['vorbiscomment']['title'][0]);
 					}
 
 					$this->tags[$song] = array(
@@ -349,8 +351,8 @@ class PluginMusicServer extends Plugin {
 		foreach ($this->tags as $song => $tags) {
 			$list .= "\t<song>". CRLF;
 			$list .= "\t\t<file>". $song ."</file>". CRLF;
-			$list .= "\t\t<artist>". utf8_encode($tags['Artist']) ."</artist>". CRLF;
-			$list .= "\t\t<title>". utf8_encode($tags['Title']) ."</title>". CRLF;
+			$list .= "\t\t<artist>". $tags['Artist'] ."</artist>". CRLF;
+			$list .= "\t\t<title>". $tags['Title'] ."</title>". CRLF;
 			$list .= "\t</song>". CRLF;
 		}
 		$list .= '</tags>'. CRLF;
@@ -462,7 +464,7 @@ class PluginMusicServer extends Plugin {
 					($current['Url'] != '' ? $current['Url'] : $current['File'])
 				);
 				if ($this->cachetags && isset($this->tags[$current])) {
-					$tags = $this->tags[$current];
+					$tags = array_map("CyrillicTags", $this->tags[$current]); // теги//$tags = $this->tags[$current];
 				}
 				if ($this->stripdirs) {
 					$current = preg_replace('|.*[/\\\\]|', '', $current);
@@ -1084,6 +1086,13 @@ class PluginMusicServer extends Plugin {
 		catch (Exception $exception) {
 			$aseco->console('[MusicServer] webrequest->HEAD(): '. $exception->getCode() .' - '. $exception->getMessage() ."\n". $exception->getTraceAsString(), E_USER_WARNING);
 		}
+	}
+	
+	function CyrillicTags ($array) {
+		if(is_array($array))
+			return array_map('myIconv', $array);
+		else
+			return iconv('UTF-8', 'ISO-8859-1//TRANSLIT', $array);
 	}
 }
 
