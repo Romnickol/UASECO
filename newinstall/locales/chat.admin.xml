@@ -4,6 +4,7 @@
 	Version:	2017-04-17
 	Authors:	[EN] undef.de
 			[DE] askuri
+			На русском - Romnickol
 	//-->
 
 	<plugin_description>
@@ -33,7 +34,7 @@
 	<setcomment>
 		<en>Changes the server comment</en>
 		<de>Ändert das Kommtentar des Servers</de>
-		<ru>Изменяет комментарий сервера</ru>
+		<ru>Изменяет описание сервера</ru>
 	</setcomment>
 
 	<setpwd>
@@ -897,13 +898,13 @@
 	<message_remove_guest>
 		<en>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s{#admin} removes guest {#highlite}{3}</en>
 		<de>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s{#admin} entfernt Gast: {#highlite}{3}</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s{#admin} удаляет гостя {#highlite}{3}</ru>
 	</message_remove_guest>
 
 	<message_no_guest>
 		<en>{#server}» {#highlite}{1}{#error} is not a guest player!</en>
 		<de>{#server}» {#highlite}{1}{#error} ist kein Gast!</de>
-		<ru></ru>
+		<ru>{#server}» {#highlite}{1}{#error} - не является гостём!</ru>
 	</message_no_guest>
 
 	<message_no_open_vote>
@@ -915,31 +916,31 @@
 	<message_vote_passed>
 		<en>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s{#admin} passes vote!</en>
 		<de>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s{#admin} schließt die Abstimmung mit "ja"!</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s{#admin} заканчивает голосование - решение принято!</ru>
 	</message_vote_passed>
 
 	<message_cancel_vote>
 		<en>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s{#admin} cancels vote!</en>
 		<de>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s{#admin} schließt die Abstimmung mit "nein"!</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s{#admin} отменяет голосование - решение принято!</ru>
 	</message_cancel_vote>
 
 	<message_force_end_round>
 		<en>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s{#admin} forces round end!</en>
 		<de>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s{#admin} erzwingt das Ende der Runde!</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s{#admin} заканчивает раунд!</ru>
 	</message_force_end_round>
 
 	<message_failed_writing>
 		<en>{#server}» {#error}Failed writing {#highlite}$i{1}{#error}!</en>
 		<de>{#server}» {#error}Fehler beim schreiben von {#highlite}$i{1}{#error}!</de>
-		<ru></ru>
+		<ru>{#server}» {#error}Невозможно сохранить {#highlite}$i{1}{#error}!</ru>
 	</message_failed_writing>
 
 	<message_failed_writing_detailed>
 		<en>{#server}» {#error}Error writing {#highlite}$i {1} {#error}!</en>
 		<de>{#server}» {#error}Fehler beim schreiben von {#highlite}$i {1} {#error}!</de>
-		<ru></ru>
+		<ru>{#server}» {#error}Невозможно сохранить {#highlite}$i {1} {#error}!</ru>
 	</message_failed_writing_detailed>
 
 	<message_file_written>
