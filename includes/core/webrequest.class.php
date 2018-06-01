@@ -50,8 +50,8 @@ class WebRequest extends BaseClass {
 
 		$this->setAuthor('undef.de');
 		$this->setVersion('1.0.1');
-		$this->setBuild('2017-05-17');
-		$this->setCopyright('2016 - 2017 by undef.de');
+		$this->setBuild('2018-05-07');
+		$this->setCopyright('2016 - 2018 by undef.de');
 		$this->setDescription('Provides asynchronous and synchronous communication for HTTP GET-, POST- and HEAD-Requests.');
 
 		$this->timeout		= 20;
@@ -68,7 +68,7 @@ class WebRequest extends BaseClass {
 		$found = false;
 		if ($dir = opendir($this->path)) {
 			while ($entry = readdir($dir)) {
-				if ($entry == '.' || $entry == '..') {
+				if ($entry === '.' || $entry === '..') {
 					continue;
 				}
 				if (is_file($this->path.DIRECTORY_SEPARATOR.$entry) === true && strpos($entry, 'webrequest.pid.') !== false) {
@@ -96,7 +96,7 @@ class WebRequest extends BaseClass {
 		$worker_pids = array();
 		if ($dir = opendir($this->path)) {
 			while ($entry = readdir($dir)) {
-				if ($entry == '.' || $entry == '..') {
+				if ($entry === '.' || $entry === '..') {
 					continue;
 				}
 				if (is_file($this->path.DIRECTORY_SEPARATOR.$entry) === true && strpos($entry, 'webrequest.pid.') !== false) {
@@ -414,7 +414,7 @@ class WebRequest extends BaseClass {
 		// Cleanup
 		if ($dir = opendir($this->path)) {
 			while ($entry = readdir($dir)) {
-				if ($entry == '.' || $entry == '..') {
+				if ($entry === '.' || $entry === '..') {
 					continue;
 				}
 				if (@is_file($this->path.DIRECTORY_SEPARATOR.$entry) === true && strpos($entry, '.new') !== false) {
@@ -471,7 +471,7 @@ class WebRequest extends BaseClass {
 
 		// Parse headers
 		foreach (explode("\n", $data[0]) as $line) {
-			if (substr($line, 0, 5) == 'HTTP/' || substr($line, 0, 6) == 'HTTPS/') {
+			if (substr($line, 0, 5) === 'HTTP/' || substr($line, 0, 6) === 'HTTPS/') {
 				$parts = explode(' ', $line);
 				$request->response['header']['protocol']	= $parts[0];
 				$request->response['header']['code']		= (int)$parts[1];
@@ -479,10 +479,10 @@ class WebRequest extends BaseClass {
 			}
 			else {
 				$item = explode(': ', $line);
-				if (strtolower($item[0]) == 'last-modified') {
+				if (strtolower($item[0]) === 'last-modified') {
 					$request->response['header']['last_modified'] = $item[1];
 				}
-				else if (strtolower($item[0]) == 'content-type') {
+				else if (strtolower($item[0]) === 'content-type') {
 					$request->response['header']['content_type'] = $item[1];
 				}
 			}

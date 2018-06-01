@@ -4,7 +4,7 @@
 
 ### General changes
 
-* Requires a `Maniaplanet Dedicated Server` build 2017-08-04_11_00 or higher
+* Requires a `Maniaplanet Dedicated Server` build `2018-03-29_21_00 (Linux)` / `2018-03-29_21_43 (Windows)` or higher
 * The logfile from UASECO has been renamed to `2017-06-15-uaseco-current.txt` or `2017-06-15-14-31-12-uaseco.txt` for older logfiles
 * The `webrequest.php` uses an own logfile named `2017-06-15-webrequest-current.txt` or `2017-06-15-14-31-12-webrequest.txt` for older logfiles (thanks Shrike)
 * Changed `newinstall/webrequest.sh` and `newinstall/webrequest.bat` by adding an own logfile (thanks fiendy)
@@ -12,6 +12,14 @@
 * Added a better error diagnostic message in `includes/core/locales.class.php`
 * Added changes for plugin.pay2play.php [submitted from hacki65 at github](https://github.com/undeflabs/UASECO/pull/25/files)
 * Added support for songs with space in the filename for `plugin/plugin.music_server.php` (thanks Phenom1994)
+* Updated to the gbxdatafetcher/2.11 (thanks Xymph)
+* Updated to the ModeScriptApi version `[2.5.0](https://github.com/maniaplanet/script-xmlrpc/releases)`
+* Added a map list progress indicator for the logfile while starting sequence
+* Updated `plugins/plugin.round_autoend.php` to work also while a WarmUp is running (thanks speedychris)
+* Added some optimations into `includes/core/playerlist.class.php` (thanks brakerb)
+* Updated `includes/musicserver/getid3` to version `1.9.15` (thanks [James Heinrich](https://github.com/JamesHeinrich/getID3))
+* Changed parameter structure of the events `onPlayerFinishPrefix`, `onPlayerFinish` and `onPlayerFinishPostfix`
+* Replaced PHP equality operators (`==` and `!=`) with identical operators (`===` and `!==`) for a performance gain (initiated by C-Lodder)[https://github.com/undeflabs/UASECO/pull/32]
 
 
 ### Changes at config files
@@ -30,6 +38,16 @@
 * Changed `<settings><style><background_focus>` from `004B7D99` to `0099FFFF` in `newinstall/config/pay2play.xml` (thanks hacki65)
 * Changed all `<entry>Modes/TrackMania/` lines with official modescripts at `<scripts>` in `newinstall/config/modescript_settings.xml`
 * Added `<modebase><respawn_behaviour>` in `newinstall/config/modescript_settings.xml`
+* Added `<ui_properties><scorestable>` in `newinstall/config/modescript_settings.xml`
+* Added `<ui_properties><viewers_count>` in `newinstall/config/modescript_settings.xml`
+* Updated `<scripts><*>` in `newinstall/config/modescript_settings.xml` to require the actual versions
+* Added `<message_warmup_round_end>` in `newinstall/locales/plugin.round_autoend.xml`
+* Removed `<modebase><scores_table_style_path>` from `newinstall/config/modescript_settings.xml`, because this has been removed from the game with MP4
+* Moved the plugin `chat.help.php` into the required section in `newinstall/config/plugins.xml` (thanks speedychris)
+* Moved the plugin `plugin.map.php`, `plugin.panels.php` and `plugin.rasp.php` into the `Optional plugins` section in `newinstall/config/plugins.xml`
+* Splited the section `Required plugins` into `Minimal required plugins` and `Maximal required plugins` in `newinstall/config/plugins.xml`
+* Changed `<message_nextenv_failed>`, `<message_activate_localrecords>` and `<message_activate_addthis>` in `newinstall\locales\chat.admin.xml`
+* Added `<message_activate_rasp>` in `newinstall\locales\chat.admin.xml`
 
 
 ### Bug fixes
@@ -42,13 +60,25 @@
 * Fixed [PHP Notice] Undefined offset: 1 on line 632 in file `includes/core/helper.class.php` (thanks Plateo)
 * Fixed [PHP Notice] Trying to get property of non-object on line 970 in file `plugins/plugin.modescript_handler.php` (thanks hackie)
 * Fixed [PHP Notice] Undefined offset: 0 on line 8471 in file `plugins/plugin.records_eyepiece.php` (thanks Tavernicole)
-* Fixed [PHP Warning] end() expects parameter 1 to be array, string given on line 1207 in file `plugins/plugin.checkpoints.php` (thanks fl3kzZ)
+* Fixed [PHP Warning] end() expects parameter 1 to be array, string given on line 1207 in file `plugins/plugin.checkpoints.php` (thanks fl3kzZ, endbase, aca)
 * Fixed not working `/infobar reload` (thanks hackie)
 * Fixed [PHP Warning] Declaration of Database::query($sql) should be compatible with mysqli::query($query, $resultmode = NULL) in `includes/core/database.class.php` on line 431 (thanks hacki65)
 * Fixed [PHP Warning] array_key_exists(): The first argument should be either a string or an integer on line 709 in file path to `plugins/plugin.rasp_jukebox.php` (thanks hackie)
 * Fixed `strippling.xml` which holds the wrong map because of the too early call of the function `reportServerInfo()` at `loadingMap()` in `uaseco.php` (thanks hacki65)
 * Fixed multiple encoded special chars in windows and in Records Eyepiece (thanks hackie)
 * Fixed [UASECO Exception] Error returned: "Wrong setting type for `S_RespawnBehaviour`" [-1000] at GbxRemote::query() for method `SetModeScriptSettings` with arguments: (thanks hackie)
+* Fixed not working Dedimania link in the Dedimania Window which does load in the internal ManialinkBrowser instead of the external Browser (thanks Guenni71)
+* Fixed players with only numbers as login lets the LiveRankingWidget from `plugins/plugin.records_eyepiece.php` display wrong sorting and multiple entrys (thanks speedychris, endbase and special thanks to NADEO)
+* Fixed RankingList lost PID from players when using `$aseco->server->rankings->update()`
+* Fixed displaying of the CurrentMapWidget from score while in race after using "/replay" (thanks aca)
+* Fixed LastNextCurrentWindow does not display the correct next map when changing the Jukebox (thanks aca)
+* Fixed adding a map at score the CurrentMapWidget does not display the correct map (thanks speedychris)
+* Fixed wrong display of songs with spaces, "%20" instead of " " in `plugins/plugin.music_server.php` (thanks speedychris)
+* Fixed several password representations in the logfile with a mask `******` (thanks xenicle)
+* Fixed [PHP Notice] Undefined index: TMLOGIN on line 166 in file `plugins/chat.server.php` (thanks xenicle)
+* Fixed [PHP Warning] in_array() expects parameter 2 to be array, null given on line 9650 in file `plugins/plugin.records_eyepiece.php` (thanks hacki65)
+* Fixed [UASECO Warning] [Rasp] ERROR: Could not insert time! ((1452) Cannot add or update a child row: a foreign key constraint fails (`DB`.`uaseco_times`, CONSTRAINT `uaseco_times_ibfk_2` FOREIGN KEY (`PlayerId`) REFERENCES `uaseco_players` (`PlayerId`) ON DELETE CASCADE ON UPDATE CASCADE)) (thanks hackie)
+* Fixed chat command `/elist` can not juke maps, only see `-` instead of `+` (thanks hackie)
 
 
 

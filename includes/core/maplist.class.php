@@ -65,8 +65,8 @@ class MapList extends BaseClass {
 
 		$this->setAuthor('undef.de');
 		$this->setVersion('1.0.1');
-		$this->setBuild('2017-06-05');
-		$this->setCopyright('2014 - 2017 by undef.de');
+		$this->setBuild('2018-05-09');
+		$this->setCopyright('2014 - 2018 by undef.de');
 		$this->setDescription('Stores information about all Maps on the dedicated server and provides several functions for sorting.');
 
 		$this->debug			= $debug;
@@ -147,12 +147,12 @@ class MapList extends BaseClass {
 
 	public function getMapById ($id) {
 		foreach ($this->map_list as $map) {
-			if ($map->id == $id) {
+			if ($map->id === (int)$id) {
 				return $map;
 			}
 		}
 		if ($this->debug) {
-			trigger_error('[MapList] getMapByFilename(): Can not find map with ID "'. $id .'" in map_list[]', E_USER_WARNING);
+			trigger_error('[MapList] getMapById(): Can not find map with ID "'. $id .'" in map_list[]', E_USER_WARNING);
 		}
 		return new Map(null, null);
 	}
@@ -165,7 +165,7 @@ class MapList extends BaseClass {
 
 	public function getMapByFilename ($filename) {
 		foreach ($this->map_list as $map) {
-			if ($map->filename == $filename) {
+			if ($map->filename === $filename) {
 				return $map;
 			}
 		}
@@ -183,7 +183,7 @@ class MapList extends BaseClass {
 
 	public function removeMapByFilename ($filename) {
 		foreach ($this->map_list as $map) {
-			if ($map->filename == $filename) {
+			if ($map->filename === $filename) {
 				unset($this->map_list[$map->uid]);
 				return true;
 			}
@@ -290,7 +290,7 @@ class MapList extends BaseClass {
 				}
 			}
 			catch (Exception $exception) {
-				$aseco->console('[ClassMaplist] Exception occurred: ['. $exception->getCode() .'] "'. $exception->getMessage() .'" - GetMapList: Error getting the current map list from the dedicated Server!');
+				$aseco->console('[MapList] Exception occurred: ['. $exception->getCode() .'] "'. $exception->getMessage() .'" - GetMapList: Error getting the current map list from the dedicated Server!');
 				$done = true;
 				break;
 			}
@@ -309,6 +309,9 @@ class MapList extends BaseClass {
 		$karma = $this->calculateRaspKarma();
 
 
+		$count = 0;
+		$aseco->logMessage('['. date('Y-m-d H:i:s') .'] [MapList] Progressing maps: ');
+
 		$database = array();
 		$database['insert'] = array();
 		$database['update'] = array();
@@ -318,7 +321,7 @@ class MapList extends BaseClass {
 			if (isset($dbinfos[$mapinfo['UId']]) && !empty($dbinfos[$mapinfo['UId']]['filename']) && $this->force_maplist_update === false) {
 				// Create a dummy Map and setup it with data from the database
 				$map			= new Map(null, null);
-				$map->id		= $dbinfos[$mapinfo['UId']]['mapid'];
+				$map->id		= (int)$dbinfos[$mapinfo['UId']]['mapid'];
 				$map->uid		= $dbinfos[$mapinfo['UId']]['uid'];
 				$map->filename		= $mapinfo['FileName'];
 				$map->name		= $dbinfos[$mapinfo['UId']]['name'];
@@ -329,15 +332,15 @@ class MapList extends BaseClass {
 				$map->author_zone	= $dbinfos[$mapinfo['UId']]['author_zone'];
 				$map->author_continent	= $dbinfos[$mapinfo['UId']]['author_continent'];
 				$map->author_nation	= $dbinfos[$mapinfo['UId']]['author_nation'];
-				$map->author_score	= $dbinfos[$mapinfo['UId']]['author_score'];
-				$map->author_time	= $dbinfos[$mapinfo['UId']]['author_time'];
-				$map->gold_time		= $dbinfos[$mapinfo['UId']]['gold_time'];
-				$map->silver_time	= $dbinfos[$mapinfo['UId']]['silver_time'];
-				$map->bronze_time	= $dbinfos[$mapinfo['UId']]['bronze_time'];
-				$map->nb_laps		= $dbinfos[$mapinfo['UId']]['nb_laps'];
+				$map->author_score	= (int)$dbinfos[$mapinfo['UId']]['author_score'];
+				$map->author_time	= (int)$dbinfos[$mapinfo['UId']]['author_time'];
+				$map->gold_time		= (int)$dbinfos[$mapinfo['UId']]['gold_time'];
+				$map->silver_time	= (int)$dbinfos[$mapinfo['UId']]['silver_time'];
+				$map->bronze_time	= (int)$dbinfos[$mapinfo['UId']]['bronze_time'];
+				$map->nb_laps		= (int)$dbinfos[$mapinfo['UId']]['nb_laps'];
 				$map->multi_lap		= $dbinfos[$mapinfo['UId']]['multi_lap'];
-				$map->nb_checkpoints	= $dbinfos[$mapinfo['UId']]['nb_checkpoints'];
-				$map->cost		= $dbinfos[$mapinfo['UId']]['cost'];
+				$map->nb_checkpoints	= (int)$dbinfos[$mapinfo['UId']]['nb_checkpoints'];
+				$map->cost		= (int)$dbinfos[$mapinfo['UId']]['cost'];
 				$map->environment	= $dbinfos[$mapinfo['UId']]['environment'];
 				$map->mood		= $dbinfos[$mapinfo['UId']]['mood'];
 				$map->type		= $dbinfos[$mapinfo['UId']]['type'];
@@ -394,8 +397,14 @@ class MapList extends BaseClass {
 			if ($map->uid) {
 				$this->map_list[$map->uid] = $map;
 			}
+
+			if ($count % 50 === 0) {
+				$aseco->logMessage($count .'.. ');
+			}
+			$count += 1;
 		}
-		unset($maplist, $dbinfos);
+		unset($maplist, $dbinfos, $count);
+		$aseco->logMessage(LF);
 
 		// Override after finished
 		$this->force_maplist_update = false;
@@ -417,7 +426,7 @@ class MapList extends BaseClass {
 			$result = $this->updateMapInDatabase($map);
 
 			// Update the Maplist
-			if ($result == true) {
+			if ($result === true) {
 				$this->map_list[$map->uid] = $map;
 			}
 		}
@@ -458,7 +467,7 @@ class MapList extends BaseClass {
 				if (!empty($newlist)) {
 					// Add the new Maps
 					foreach ($newlist as $mapinfo) {
-						if ($mapinfo['UId'] == $uid) {
+						if ($mapinfo['UId'] === $uid) {
 							$maplist[] = $mapinfo;
 							$done = true;
 						}
@@ -478,7 +487,7 @@ class MapList extends BaseClass {
 				}
 			}
 			catch (Exception $exception) {
-				$aseco->console('[ClassMaplist] Exception occurred: ['. $exception->getCode() .'] "'. $exception->getMessage() .'" - GetMapList: Error getting the current map list from the dedicated Server!');
+				$aseco->console('[MapList] Exception occurred: ['. $exception->getCode() .'] "'. $exception->getMessage() .'" - GetMapList: Error getting the current map list from the dedicated Server!');
 				$done = true;
 				break;
 			}
@@ -561,7 +570,7 @@ class MapList extends BaseClass {
 		}
 		else {
 			$aid = $result['AuthorId'];
-			if ($map->author_continent != '' && $map->author_nation != 'OTH') {
+			if ($map->author_continent !== '' && $map->author_nation !== 'OTH') {
 				$query = "
 				UPDATE `%prefix%authors`
 				SET
@@ -676,10 +685,10 @@ class MapList extends BaseClass {
 			". $map->cost .",
 			". $aseco->db->quote($map->type) .",
 			". $aseco->db->quote($map->style) .",
-			". $aseco->db->quote( (($map->multi_lap == true) ? 'true' : 'false') ) .",
+			". $aseco->db->quote( (($map->multi_lap === true) ? 'true' : 'false') ) .",
 			". (($map->nb_laps > 1) ? $map->nb_laps : 0) .",
 			". $map->nb_checkpoints .",
-			". $aseco->db->quote( (($map->validated == true) ? 'true' : (($map->validated == false) ? 'false' : 'unknown')) ) .",
+			". $aseco->db->quote( (($map->validated === true) ? 'true' : (($map->validated === false) ? 'false' : 'unknown')) ) .",
 			". $aseco->db->quote($map->exeversion) .",
 			". $aseco->db->quote($map->exebuild) .",
 			". $aseco->db->quote($map->mod_name) .",
@@ -737,10 +746,10 @@ class MapList extends BaseClass {
 			`Cost` = ". $map->cost .",
 			`Type` = ". $aseco->db->quote($map->type) .",
 			`Style` = ". $aseco->db->quote($map->style) .",
-			`MultiLap` = ". $aseco->db->quote( (($map->multi_lap == true) ? 'true' : 'false') ) .",
+			`MultiLap` = ". $aseco->db->quote( (($map->multi_lap === true) ? 'true' : 'false') ) .",
 			`NbLaps` = ". (($map->nb_laps > 1) ? $map->nb_laps : 0) .",
 			`NbCheckpoints` = ". $map->nb_checkpoints .",
-			`Validated` = ". $aseco->db->quote( (($map->validated == true) ? 'true' : (($map->validated == false) ? 'false' : 'unknown')) ) .",
+			`Validated` = ". $aseco->db->quote( (($map->validated === true) ? 'true' : (($map->validated === false) ? 'false' : 'unknown')) ) .",
 			`ExeVersion` = ". $aseco->db->quote($map->exeversion) .",
 			`ExeBuild` = ". $aseco->db->quote($map->exebuild) .",
 			`ModName` = ". $aseco->db->quote($map->mod_name) .",

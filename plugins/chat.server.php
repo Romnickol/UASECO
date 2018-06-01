@@ -44,15 +44,10 @@ class PluginChatServer extends Plugin {
 	public function __construct () {
 
 		$this->setAuthor('undef.de');
-		$this->setVersion('1.0.0');
-		$this->setBuild('2017-04-27');
-		$this->setCopyright('2014 - 2017 by undef.de');
+		$this->setVersion('1.0.1');
+		$this->setBuild('2018-05-07');
+		$this->setCopyright('2014 - 2018 by undef.de');
 		$this->setDescription(new Message('chat.server', 'plugin_description'));
-
-		$this->addDependence('PluginManialinks',	Dependence::REQUIRED,	'1.0.0', null);
-		$this->addDependence('PluginLocalRecords',	Dependence::WANTED,	'1.0.0', null);
-		$this->addDependence('PluginRaspVotes',		Dependence::WANTED,	'1.0.0', null);
-		$this->addDependence('PluginWelcomeCenter',	Dependence::WANTED,	'1.0.0', null);
 
 		$this->registerChatCommand('uaseco',		'chat_uaseco',		new Message('chat.server', 'slash_uaseco_description'),		Player::PLAYERS);
 		$this->registerChatCommand('contact',		'chat_contact',		new Message('chat.server', 'slash_contact_description'),	Player::PLAYERS);
@@ -93,7 +88,7 @@ class PluginChatServer extends Plugin {
 	public function chat_contact ($aseco, $login, $chat_command, $chat_parameter) {
 
 		// Show chat message
-		if (strtolower($aseco->settings['admin_contact']) != 'your@email.com') {
+		if (strtolower($aseco->settings['admin_contact']) !== 'your@email.com') {
 			$msg = new Message('chat.server', 'slash_contact_chat_message');
 			$msg->addPlaceholders(
 				$aseco->settings['admin_contact']
@@ -120,11 +115,16 @@ class PluginChatServer extends Plugin {
 
 		// Create list of all MasterAdmins
 		$data = array();
-		foreach ($aseco->masteradmin_list['TMLOGIN'] as $lgn) {
-			// Skip any LAN logins
-			if (!empty($lgn) && !$aseco->isLANLogin($lgn)) {
-				$data[] = array($aseco->server->players->getPlayerNickname($lgn) .'$Z');
+		if (count($aseco->masteradmin_list) > 0 && $aseco->masteradmin_list['TMLOGIN'] !== null) {
+			foreach ($aseco->masteradmin_list['TMLOGIN'] as $lgn) {
+				// Skip any LAN logins
+				if (!empty($lgn) && !$aseco->isLANLogin($lgn)) {
+					$data[] = array($aseco->server->players->getPlayerNickname($lgn) .'$Z');
+				}
 			}
+		}
+		else {
+			$data[] = array('NO MASTERADMINS CONFIGURED');
 		}
 
 		// Setup settings for Window
@@ -163,11 +163,16 @@ class PluginChatServer extends Plugin {
 
 		// Create list of all Admins
 		$data = array();
-		foreach ($aseco->admin_list['TMLOGIN'] as $lgn) {
-			// Skip any LAN logins
-			if (!empty($lgn) && !$aseco->isLANLogin($lgn)) {
-				$data[] = array($aseco->server->players->getPlayerNickname($lgn) .'$Z');
+		if (count($aseco->admin_list) > 0 && $aseco->admin_list['TMLOGIN'] !== null) {
+			foreach ($aseco->admin_list['TMLOGIN'] as $lgn) {
+				// Skip any LAN logins
+				if (!empty($lgn) && !$aseco->isLANLogin($lgn)) {
+					$data[] = array($aseco->server->players->getPlayerNickname($lgn) .'$Z');
+				}
 			}
+		}
+		else {
+			$data[] = array('NO ADMINS CONFIGURED');
 		}
 
 		// Setup settings for Window
@@ -206,11 +211,16 @@ class PluginChatServer extends Plugin {
 
 		// Create list of all Operator
 		$data = array();
-		foreach ($aseco->operator_list['TMLOGIN'] as $lgn) {
-			// Skip any LAN logins
-			if (!empty($lgn) && !$aseco->isLANLogin($lgn)) {
-				$data[] = array($aseco->server->players->getPlayerNickname($lgn) .'$Z');
+		if (count($aseco->operator_list) > 0 && $aseco->operator_list['TMLOGIN'] !== null) {
+			foreach ($aseco->operator_list['TMLOGIN'] as $lgn) {
+				// Skip any LAN logins
+				if (!empty($lgn) && !$aseco->isLANLogin($lgn)) {
+					$data[] = array($aseco->server->players->getPlayerNickname($lgn) .'$Z');
+				}
 			}
+		}
+		else {
+			$data[] = array('NO OPERATORS CONFIGURED');
 		}
 
 		// Setup settings for Window

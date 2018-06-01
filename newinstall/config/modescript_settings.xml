@@ -175,6 +175,22 @@
 				<z>5.0</z>
 			</pos>
 		</spectator_info>
+
+		<!-- Scores table displayed in the middle of the screen -->
+		<scorestable>
+			<alt_visible>true</alt_visible>		<!-- Show scoretable when pressing the ALT-Key -->
+			<visible>true</visible>			<!-- General value -->
+		</scorestable>
+
+		<!-- Number of players spectating us displayed at the bottom right of the screen -->
+		<viewers_count>
+			<visible>true</visible>
+			<pos>
+				<x>157.0</x>
+				<y>-40.0</y>
+				<z>5.0</z>
+			</pos>
+		</viewers_count>
 	</ui_properties>
 
 
@@ -188,12 +204,6 @@
 
 		<!-- Allow the players to respawn ('true') or not ('false') -->
 		<allow_respawn>true</allow_respawn>
-
-		<!--
-		Path/URL to a scores table style from an XML file,
-		see for details: http://doc.maniaplanet.com/dedicated-server/customize-scores-table.html
-		//-->
-		<scores_table_style_path></scores_table_style_path>
 
 		<!--
 		Further details: https://forum.maniaplanet.com/viewtopic.php?p=290478#p290478
@@ -600,14 +610,15 @@
 		<entry>Libs/domino54/SentenceBank.Script.txt|2015-06-27</entry>
 		<entry>Libs/domino54/Translations.Script.txt|2015-06-27</entry>
 		<entry>Libs/domino54/UpdateChecker.Script.txt|2015-06-27</entry>
+		<entry>Libs/Nadeo/TrackMania/Scores.Script.txt|2018-03-12</entry>
 		<entry>Modes/TrackMania/Doppler.Script.txt|2015-08-29</entry>
 		<entry>Modes/TrackMania/Knockout.Script.txt|2015-06-27</entry>
-		<entry>Modes/TrackMania/Rounds.Script.txt|2017-07-12</entry>
+		<entry>Modes/TrackMania/Rounds.Script.txt|2018-03-08</entry>
 		<entry>Modes/TrackMania/TimeAttack.Script.txt|2017-07-12</entry>
-		<entry>Modes/TrackMania/Team.Script.txt|2017-07-12</entry>
+		<entry>Modes/TrackMania/Team.Script.txt|2018-03-08</entry>
 		<entry>Modes/TrackMania/Laps.Script.txt|2017-07-12</entry>
-		<entry>Modes/TrackMania/Cup.Script.txt|2017-07-12</entry>
+		<entry>Modes/TrackMania/Cup.Script.txt|2018-03-08</entry>
 		<entry>Modes/TrackMania/TeamAttack.Script.txt|2016-04-13</entry>
-		<entry>Modes/TrackMania/Chase.Script.txt|2017-08-11</entry>
+		<entry>Modes/TrackMania/Chase.Script.txt|2018-02-12</entry>
 	</scripts>
 </settings>

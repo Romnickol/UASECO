@@ -65,8 +65,8 @@ class PluginMusicServer extends Plugin {
 
 		$this->setAuthor('undef.de');
 		$this->setVersion('1.0.0');
-		$this->setBuild('2017-05-15');
-		$this->setCopyright('2014 - 2017 by undef.de');
+		$this->setBuild('2018-05-07');
+		$this->setCopyright('2014 - 2018 by undef.de');
 		$this->setDescription('Handles all server-controlled music.');
 
 		$this->addDependence('PluginManialinks', Dependence::REQUIRED, '1.0.0', null);
@@ -132,13 +132,13 @@ class PluginMusicServer extends Plugin {
 		// check for remote or local path
 		if (in_array(substr(strtolower($this->server), 0, 7), $this->protocols)) {
 			// Remote: append / if missing
-			if (substr($this->server, -1) != '/') {
+			if (substr($this->server, -1) !== '/') {
 				$this->server .= '/';
 			}
 		}
 		else {
 			// Local: append DIRECTORY_SEPARATOR if missing
-			if (substr($this->server, -1) != DIRECTORY_SEPARATOR) {
+			if (substr($this->server, -1) !== DIRECTORY_SEPARATOR) {
 				$this->server .= DIRECTORY_SEPARATOR;
 			}
 		}
@@ -147,6 +147,7 @@ class PluginMusicServer extends Plugin {
 		foreach ($settings['SONG_FILES'][0]['SONG'] as $song) {
 			$this->songs[] = $song;
 		}
+		unset($settings['SONG_FILES'][0]['SONG']);
 
 		// remove duplicates
 		$this->songs = array_values(array_unique($this->songs));
@@ -236,7 +237,7 @@ class PluginMusicServer extends Plugin {
 		}
 
 		// check for automatic next song
-		if ($this->autonext == true) {
+		if ($this->autonext === true) {
 			// check remote or local song access
 			$song = $this->getNextSong();
 			if (in_array(substr(strtolower($this->server), 0, 7), $this->protocols) && !$this->httpHead($this->server . $song)) {
@@ -295,17 +296,17 @@ class PluginMusicServer extends Plugin {
 		// Check all .OGG songs for cached or new tags
 		$aseco->console('[MusicServer] Parsing OGG files for ID3-Tags:');
 		foreach ($this->songs as $song) {
-			if (strtoupper(substr($song, -4)) == '.OGG') {
+			if (strtoupper(substr($song, -4)) === '.OGG') {
 				if (!isset($this->tags[$song])) {
 					$aseco->console('[MusicServer] » Parsing "'. $server.$song .'"');
-					if ($remote_file == true) {
+					if ($remote_file === true) {
 						$fileparts = false;
 						if ($this->maxlen > 0) {
 							// Get only the configured bytes from the song/file
-							$fileparts = file_get_contents($server.$song, false, $this->stream_context, 0, $this->maxlen);
+							$fileparts = file_get_contents($server.str_replace(' ', '%20', $song), false, $this->stream_context, 0, $this->maxlen);
 						}
 						else {
-							$fileparts = file_get_contents($server.$song, false, $this->stream_context);
+							$fileparts = file_get_contents($server.str_replace(' ', '%20', $song), false, $this->stream_context);
 						}
 						if ($fileparts !== false) {
 							$tmpfname = tempnam('./', $song .'_');
@@ -313,16 +314,15 @@ class PluginMusicServer extends Plugin {
 
 							// Get the ID3 tag
 							$id3 = $getID3->analyze($tmpfname);
-							$aseco->console('[MusicServer] Parsed: '.$id3['tags']['vorbiscomment']['artist'][0].' - '.$id3['tags']['vorbiscomment']['title'][0]);
+							$aseco->console('[MusicServer] !MOD Parsed: '.$id3['tags']['vorbiscomment']['artist'][0].' - '.$id3['tags']['vorbiscomment']['title'][0]);
 							// Remove temporary file
 							unlink($tmpfname);
-
 						}
 					}
 					else {
 						// Get the ID3 tag
 						$id3 = $getID3->analyze($server.$song);
-							$aseco->console('[MusicServer] Parsed "'. $server.$song .'": '.$id3['tags']['vorbiscomment']['artist'][0].' - '.$id3['tags']['vorbiscomment']['title'][0]);
+							$aseco->console('[MusicServer] !MOD Parsed "'. $server.$song .'": '.$id3['tags']['vorbiscomment']['artist'][0].' - '.$id3['tags']['vorbiscomment']['title'][0]);
 					}
 
 					$this->tags[$song] = array(
@@ -351,8 +351,8 @@ class PluginMusicServer extends Plugin {
 		foreach ($this->tags as $song => $tags) {
 			$list .= "\t<song>". CRLF;
 			$list .= "\t\t<file>". $song ."</file>". CRLF;
-			$list .= "\t\t<artist>". $tags['Artist'] ."</artist>". CRLF;
-			$list .= "\t\t<title>". $tags['Title'] ."</title>". CRLF;
+			$list .= "\t\t<artist>". utf8_encode($tags['Artist']) ."</artist>". CRLF;
+			$list .= "\t\t<title>". utf8_encode($tags['Title']) ."</title>". CRLF;
 			$list .= "\t</song>". CRLF;
 		}
 		$list .= '</tags>'. CRLF;
@@ -399,7 +399,7 @@ class PluginMusicServer extends Plugin {
 			}
 		}
 
-		if ($command['params'][0] == 'help') {
+		if ($command['params'][0] === 'help') {
 
 			$header = '{#black}/music$g handles server music:';
 			$help = array();
@@ -449,7 +449,7 @@ class PluginMusicServer extends Plugin {
 			// display ManiaLink message
 			$aseco->plugins['PluginManialinks']->display_manialink($player->login, $header, array('Icons64x64_1', 'TrackInfo', -0.01), $help, array(0.9, 0.05, 0.2, 0.65), 'OK');
 		}
-		else if ($command['params'][0] == 'settings') {
+		else if ($command['params'][0] === 'settings') {
 
 			$header = 'Music server settings:';
 			$info = array();
@@ -458,10 +458,10 @@ class PluginMusicServer extends Plugin {
 			}
 			// get current song and strip server path
 			$current = $aseco->client->query('GetForcedMusic');
-			if ($current['Url'] != '' || $current['File'] != '') {
+			if ($current['Url'] !== '' || $current['File'] !== '') {
 				//$current = preg_replace('|^' . $this->server . '|', '',
 				$current = str_replace($this->server, '',
-					($current['Url'] != '' ? $current['Url'] : $current['File'])
+					($current['Url'] !== '' ? $current['Url'] : $current['File'])
 				);
 				if ($this->cachetags && isset($this->tags[$current])) {
 					$tags = array_map("CyrillicTags", $this->tags[$current]); // теги//$tags = $this->tags[$current];
@@ -494,7 +494,7 @@ class PluginMusicServer extends Plugin {
 			// display ManiaLink message
 			$aseco->plugins['PluginManialinks']->display_manialink($player->login, $header, array('Icons128x32_1', 'Sound'), $info, array(1.0, 0.23, 0.77), 'OK');
 		}
-		else if ($command['params'][0] == 'list') {
+		else if ($command['params'][0] === 'list') {
 
 			// check for search parameter
 			if (isset($command['params'][1])) {
@@ -516,7 +516,7 @@ class PluginMusicServer extends Plugin {
 					$tags = $this->tags[$song];
 				}
 				// check for match in filename or, if available, title & artist tags
-				if ($search == '') {
+				if ($search === '') {
 					$pos = 0;
 				}
 				else {
@@ -574,14 +574,14 @@ class PluginMusicServer extends Plugin {
 				$aseco->sendChatMessage($message, $player->login);
 			}
 		}
-		else if ($command['params'][0] == 'current') {
+		else if ($command['params'][0] === 'current') {
 
 			// get current song and strip server path
 			$current = $aseco->client->query('GetForcedMusic');
-			if ($current['Url'] != '' || $current['File'] != '') {
+			if ($current['Url'] !== '' || $current['File'] !== '') {
 				//$current = preg_replace('|^' . $this->server . '|', '',
 				$current = str_replace($this->server, '',
-					($current['Url'] != '' ? $current['Url'] : $current['File'])
+					($current['Url'] !== '' ? $current['Url'] : $current['File'])
 				);
 
 				if ($this->cachetags && isset($this->tags[$current])) {
@@ -607,7 +607,7 @@ class PluginMusicServer extends Plugin {
 			);
 			$aseco->sendChatMessage($message, $player->login);
 		}
-		else if ($command['params'][0] == 'reload') {
+		else if ($command['params'][0] === 'reload') {
 
 			// check for admin ability
 			if ($aseco->allowAbility($player, 'chat_musicadmin')) {
@@ -641,7 +641,7 @@ class PluginMusicServer extends Plugin {
 				$aseco->sendChatMessage($message, $player->login);
 			}
 		}
-		else if ($command['params'][0] == 'next') {
+		else if ($command['params'][0] === 'next') {
 
 			// check for admin ability
 			if ($aseco->allowAbility($player, 'chat_musicadmin')) {
@@ -682,7 +682,7 @@ class PluginMusicServer extends Plugin {
 				$aseco->sendChatMessage($message, $player->login);
 			}
 		}
-		else if ($command['params'][0] == 'sort') {
+		else if ($command['params'][0] === 'sort') {
 
 			// check for admin ability
 			if ($aseco->allowAbility($player, 'chat_musicadmin')) {
@@ -705,7 +705,7 @@ class PluginMusicServer extends Plugin {
 				$aseco->sendChatMessage($message, $player->login);
 			}
 		}
-		else if ($command['params'][0] == 'shuffle') {
+		else if ($command['params'][0] === 'shuffle') {
 
 			// check for admin ability
 			if ($aseco->allowAbility($player, 'chat_musicadmin')) {
@@ -728,13 +728,13 @@ class PluginMusicServer extends Plugin {
 				$aseco->sendChatMessage($message, $player->login);
 			}
 		}
-		else if ($command['params'][0] == 'override' && $command['params'][1] != '') {
+		else if ($command['params'][0] === 'override' && $command['params'][1] !== '') {
 
 			// check for admin ability
 			if ($aseco->allowAbility($player, 'chat_musicadmin')) {
 				$param = strtoupper($command['params'][1]);
-				if ($param == 'ON' || $param == 'OFF') {
-					$this->override = ($param == 'ON');
+				if ($param === 'ON' || $param === 'OFF') {
+					$this->override = ($param === 'ON');
 
 					// log console message
 					$aseco->console('[MusicServer] {1} [{2}] set music override {3} !', $logtitle, $player->login, ($this->override ? 'ON' : 'OFF'));
@@ -749,13 +749,13 @@ class PluginMusicServer extends Plugin {
 				$aseco->sendChatMessage($message, $player->login);
 			}
 		}
-		else if ($command['params'][0] == 'autonext' && $command['params'][1] != '') {
+		else if ($command['params'][0] === 'autonext' && $command['params'][1] !== '') {
 
 			// check for admin ability
 			if ($aseco->allowAbility($player, 'chat_musicadmin')) {
 				$param = strtoupper($command['params'][1]);
-				if ($param == 'ON' || $param == 'OFF') {
-					$this->autonext = ($param == 'ON');
+				if ($param === 'ON' || $param === 'OFF') {
+					$this->autonext = ($param === 'ON');
 
 					// log console message
 					$aseco->console('[MusicServer] {1} [{2}] set music autonext {3} !', $logtitle, $player->login, ($this->autonext ? 'ON' : 'OFF'));
@@ -770,13 +770,13 @@ class PluginMusicServer extends Plugin {
 				$aseco->sendChatMessage($message, $player->login);
 			}
 		}
-		else if ($command['params'][0] == 'autoshuffle' && $command['params'][1] != '') {
+		else if ($command['params'][0] === 'autoshuffle' && $command['params'][1] !== '') {
 
 			// check for admin ability
 			if ($aseco->allowAbility($player, 'chat_musicadmin')) {
 				$param = strtoupper($command['params'][1]);
-				if ($param == 'ON' || $param == 'OFF') {
-					$this->autoshuffle = ($param == 'ON');
+				if ($param === 'ON' || $param === 'OFF') {
+					$this->autoshuffle = ($param === 'ON');
 
 					// log console message
 					$aseco->console('[MusicServer] {1} [{2}] set music autoshuffle {3} !', $logtitle, $player->login, ($this->autoshuffle ? 'ON' : 'OFF'));
@@ -791,13 +791,13 @@ class PluginMusicServer extends Plugin {
 				$aseco->sendChatMessage($message, $player->login);
 			}
 		}
-		else if ($command['params'][0] == 'allowjb' && $command['params'][1] != '') {
+		else if ($command['params'][0] === 'allowjb' && $command['params'][1] !== '') {
 
 			// check for admin ability
 			if ($aseco->allowAbility($player, 'chat_musicadmin')) {
 				$param = strtoupper($command['params'][1]);
-				if ($param == 'ON' || $param == 'OFF') {
-					$this->allowjb = ($param == 'ON');
+				if ($param === 'ON' || $param === 'OFF') {
+					$this->allowjb = ($param === 'ON');
 
 					// log console message
 					$aseco->console('[MusicServer] {1} [{2}] set allow music jukebox {3} !', $logtitle, $player->login, ($this->allowjb ? 'ON' : 'OFF'));
@@ -812,13 +812,13 @@ class PluginMusicServer extends Plugin {
 				$aseco->sendChatMessage($message, $player->login);
 			}
 		}
-		else if ($command['params'][0] == 'stripdirs' && $command['params'][1] != '') {
+		else if ($command['params'][0] === 'stripdirs' && $command['params'][1] !== '') {
 
 			// check for admin ability
 			if ($aseco->allowAbility($player, 'chat_musicadmin')) {
 				$param = strtoupper($command['params'][1]);
-				if ($param == 'ON' || $param == 'OFF') {
-					$this->stripdirs = ($param == 'ON');
+				if ($param === 'ON' || $param === 'OFF') {
+					$this->stripdirs = ($param === 'ON');
 
 					// log console message
 					$aseco->console('[MusicServer] {1} [{2}] set strip subdirs {3} !', $logtitle, $player->login, ($this->stripdirs ? 'ON' : 'OFF'));
@@ -833,13 +833,13 @@ class PluginMusicServer extends Plugin {
 				$aseco->sendChatMessage($message, $player->login);
 			}
 		}
-		else if ($command['params'][0] == 'stripexts' && $command['params'][1] != '') {
+		else if ($command['params'][0] === 'stripexts' && $command['params'][1] !== '') {
 
 			// check for admin ability
 			if ($aseco->allowAbility($player, 'chat_musicadmin')) {
 				$param = strtoupper($command['params'][1]);
-				if ($param == 'ON' || $param == 'OFF') {
-					$this->stripexts = ($param == 'ON');
+				if ($param === 'ON' || $param === 'OFF') {
+					$this->stripexts = ($param === 'ON');
 
 					// log console message
 					$aseco->console('[MusicServer] {1} [{2}] set strip extensions {3} !', $logtitle, $player->login, ($this->stripexts ? 'ON' : 'OFF'));
@@ -854,7 +854,7 @@ class PluginMusicServer extends Plugin {
 				$aseco->sendChatMessage($message, $player->login);
 			}
 		}
-		else if ($command['params'][0] == 'off') {
+		else if ($command['params'][0] === 'off') {
 
 			// check for admin ability
 			if ($aseco->allowAbility($player, 'chat_musicadmin')) {
@@ -881,7 +881,7 @@ class PluginMusicServer extends Plugin {
 				$aseco->sendChatMessage($message, $player->login);
 			}
 		}
-		else if ($command['params'][0] == 'jukebox' || $command['params'][0] == 'jb') {
+		else if ($command['params'][0] === 'jukebox' || $command['params'][0] === 'jb') {
 
 			if (!empty($this->jukebox)) {
 				$head = 'Upcoming songs in the jukebox:';
@@ -923,7 +923,7 @@ class PluginMusicServer extends Plugin {
 				$aseco->sendChatMessage($message, $player->login);
 			}
 		}
-		else if ($command['params'][0] == 'drop') {
+		else if ($command['params'][0] === 'drop') {
 
 			// check for a song by this player
 			if (array_key_exists($player->login, $this->jukebox)) {
@@ -1029,7 +1029,7 @@ class PluginMusicServer extends Plugin {
 	public function getNextSong () {
 
 		$this->current++;
-		if ($this->current == count($this->songs)) {
+		if ($this->current === count($this->songs)) {
 			$this->current = 0;
 		}
 
@@ -1047,11 +1047,11 @@ class PluginMusicServer extends Plugin {
 
 		$sid--;
 		$this->current++;
-		if ($this->current == count($this->songs)) {
+		if ($this->current === count($this->songs)) {
 			$this->current = 0;
 		}
 
-		if ($sid != $this->current) {
+		if ($sid !== $this->current) {
 			$aseco->moveArrayElement($this->songs, $sid, $this->current);
 		}
 
@@ -1087,7 +1087,7 @@ class PluginMusicServer extends Plugin {
 			$aseco->console('[MusicServer] webrequest->HEAD(): '. $exception->getCode() .' - '. $exception->getMessage() ."\n". $exception->getTraceAsString(), E_USER_WARNING);
 		}
 	}
-	
+
 	function CyrillicTags ($array) {
 		if(is_array($array))
 			return array_map('myIconv', $array);

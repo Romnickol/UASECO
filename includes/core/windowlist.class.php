@@ -45,8 +45,8 @@ class WindowList extends BaseClass {
 
 		$this->setAuthor('undef.de');
 		$this->setVersion('1.0.0');
-		$this->setBuild('2017-05-31');
-		$this->setCopyright('2014 - 2017 by undef.de');
+		$this->setBuild('2018-05-07');
+		$this->setCopyright('2014 - 2018 by undef.de');
 		$this->setDescription(new Message('class.window', 'windowlist_description'));
 
 		// Register callbacks for this new Window
@@ -100,19 +100,19 @@ class WindowList extends BaseClass {
 
 
 		$send = false;
-		if ($answer['Action'] == 'StripStyles') {
+		if ($answer['Action'] === 'StripStyles') {
 
 			$window->settings['stripcodes'] = true;
 			$send = true;
 
 		}
-		else if ($answer['Action'] == 'DefaultStyles') {
+		else if ($answer['Action'] === 'DefaultStyles') {
 
 			$window->settings['stripcodes'] = false;
 			$send = true;
 
 		}
-		else if ($answer['Action'] == 'ClassWindowPagePrev') {
+		else if ($answer['Action'] === 'ClassWindowPagePrev') {
 
 			$window->content['page'] -= 1;
 			if ($window->content['page'] < 0) {
@@ -121,7 +121,7 @@ class WindowList extends BaseClass {
 			$send = true;
 
 		}
-		else if ($answer['Action'] == 'ClassWindowPagePrevTwo') {
+		else if ($answer['Action'] === 'ClassWindowPagePrevTwo') {
 
 			$window->content['page'] -= 2;
 			if ($window->content['page'] < 0) {
@@ -130,13 +130,13 @@ class WindowList extends BaseClass {
 			$send = true;
 
 		}
-		else if ($answer['Action'] == 'ClassWindowPageFirst') {
+		else if ($answer['Action'] === 'ClassWindowPageFirst') {
 
 			$window->content['page'] = 0;
 			$send = true;
 
 		}
-		else if ($answer['Action'] == 'ClassWindowPageNext') {
+		else if ($answer['Action'] === 'ClassWindowPageNext') {
 
 			$window->content['page'] += 1;
 			if ($window->content['page'] > $window->content['maxpage']) {
@@ -145,7 +145,7 @@ class WindowList extends BaseClass {
 			$send = true;
 
 		}
-		else if ($answer['Action'] == 'ClassWindowPageNextTwo') {
+		else if ($answer['Action'] === 'ClassWindowPageNextTwo') {
 
 			$window->content['page'] += 2;
 			if ($window->content['page'] > $window->content['maxpage']) {
@@ -154,13 +154,13 @@ class WindowList extends BaseClass {
 			$send = true;
 
 		}
-		else if ($answer['Action'] == 'ClassWindowPageLast') {
+		else if ($answer['Action'] === 'ClassWindowPageLast') {
 
 			$window->content['page'] = $window->content['maxpage'];
 			$send = true;
 
 		}
-		else if ($answer['Action'] == 'ClassWindowRefreshPage') {
+		else if ($answer['Action'] === 'ClassWindowRefreshPage') {
 
 			// Just send the current Page again
 			$send = true;
@@ -175,7 +175,7 @@ class WindowList extends BaseClass {
 		}
 
 
-		if ($send == true) {
+		if ($send === true) {
 			$this->send($window, $player, $window->settings['hideclick'], $window->settings['hideclick']);
 		}
 	}
@@ -192,7 +192,7 @@ class WindowList extends BaseClass {
 		if (isset($player) && is_object($player) && $player instanceof Player && $player->id > 0) {
 
 			// Make sure there are haligns for inner columns
-			if (count($window->settings['halign']) == 0) {
+			if (count($window->settings['halign']) === 0) {
 				$widths = (100 / $window->settings['columns']);
 				for ($i = $widths; $i <= 100; $i += $widths) {
 					$window->settings['halign'][] = 'left';
@@ -200,7 +200,7 @@ class WindowList extends BaseClass {
 			}
 
 			// Make sure there are widths for inner columns
-			if (count($window->settings['widths']) == 0) {
+			if (count($window->settings['widths']) === 0) {
 				$widths = (100 / $window->settings['columns']);
 				for ($i = $widths; $i <= 100; $i += $widths) {
 					$window->settings['widths'][] = $widths;
@@ -208,7 +208,7 @@ class WindowList extends BaseClass {
 			}
 
 			// Make sure there are textcolors for inner columns
-			if (count($window->settings['textcolors']) == 0) {
+			if (count($window->settings['textcolors']) === 0) {
 				$widths = (100 / $window->settings['columns']);
 				for ($i = $widths; $i <= 100; $i += $widths) {
 					$window->settings['textcolors'][] = 'FFFF';
@@ -223,7 +223,7 @@ class WindowList extends BaseClass {
 			$this->storePlayerData($player, 'ClassWindow', $window);
 
 			// Concat all the elements
-			if ($window->settings['mode'] == 'columns') {
+			if ($window->settings['mode'] === 'columns') {
 				$xml = str_replace(
 					array(
 						'%content%',
@@ -238,7 +238,7 @@ class WindowList extends BaseClass {
 					$window->buildWindow($player->login)
 				);
 			}
-			else if ($window->settings['mode'] == 'pages') {
+			else if ($window->settings['mode'] === 'pages') {
 				$xml = str_replace(
 					array(
 						'%content%',
@@ -259,7 +259,7 @@ class WindowList extends BaseClass {
 		}
 		else {
 			if ($aseco->debug) {
-				if ($player->id == 0) {
+				if ($player->id === 0) {
 					$aseco->console('[ClassWindowList] Ignoring the given Fakeplayer.');
 				}
 				else {

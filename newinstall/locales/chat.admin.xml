@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <locales>
 	<!--
-	Version:	2017-04-17
+	Version:	2018-05-06
 	Authors:	[EN] undef.de
 			[DE] askuri
 			На русском - Romnickol
@@ -10,7 +10,7 @@
 	<plugin_description>
 		<en>Provides regular admin commands</en>
 		<de>Bietet regulär Administrator Kommandos</de>
-		<ru>Предоставляет команды администраторов</ru>
+		<ru>Плагин предоставляет команды администраторов</ru>
 	</plugin_description>
 
 	<help>
@@ -22,7 +22,7 @@
 	<helpall>
 		<en>Displays help for available /admin commands (Window)</en>
 		<de>Zeigt die Hilfe für verfügbare /admin Kommandos (Fenster)</de>
-		<ru>Справка о доступных /admin-коммандах (в окне).
+		<ru>Справка о доступных /admin-командах (в окне).
 	</helpall>
 
 	<setservername>
@@ -64,13 +64,13 @@
 	<setmaxspecs>
 		<en>Sets a new maximum of spectators</en>
 		<de>Ändert die maximale Anzahl Zuschauer</de>
-		<ru>Устанавливает кол-во зрителей на сервере</ru>		
+		<ru>Устанавливает кол-во зрителей на сервере</ru>
 	</setmaxspecs>
 
 	<setgamemode>
 		<en>Sets next mode {timeattack, rounds, team, laps, cup, teamattack, knockout, doppler}</en>
 		<de>Stellt den nächsten Modus ein {timeattack, rounds, team, laps, cup, teamattack, knockout, doppler}</de>
-		<ru>Устанавливает следуюищй режим игры {На время - timeattack, Раунды - rounds, Команды - team, Круги - laps, Кубок - cup, teamattack, knockout, doppler}</ru>		
+		<ru>Устанавливает следуюищй режим игры {На время - timeattack, Раунды - rounds, Команды - team, Круги - laps, Кубок - cup, teamattack, knockout, doppler}</ru>
 	</setgamemode>
 
 	<setrefmode>
@@ -88,13 +88,13 @@
 	<skipmap>
 		<en>Forces server to load next map</en>
 		<de>Erzwingt Wechsel zur nächsten Map</de>
-		<ru>Переход на следующую карту</ru>		
+		<ru>Переход на следующую карту</ru>
 	</skipmap>
 
 	<previous>
 		<en>Forces server to load previous map</en>
 		<de>Erzwingt das Laden der vorigen Map</de>
-		<ru>Переход на предыдущую карту</ru>		
+		<ru>Переход на предыдущую карту</ru>
 	</previous>
 
 	<nextenv>
@@ -106,31 +106,31 @@
 	<restartmap>
 		<en>Restarts currently running map</en>
 		<de>Startet die aktuelle Map neu</de>
-		<ru>Перезапуск этой карты</ru>		
+		<ru>Перезапуск этой карты</ru>
 	</restartmap>
 
 	<replaymap>
 		<en>Replays current map (via jukebox)</en>
 		<de>Wiederholt die Map (einreihung in die Jukebox)</de>
-		<ru>Повтор этой карты (через очередь)</ru>		
+		<ru>Повтор этой карты (через очередь)</ru>
 	</replaymap>
 
 	<dropjukebox>
 		<en>Drops a map from the jukebox</en>
 		<de>Entfernt eine map von der Jukebox</de>
-		<ru>Убирает карту из очереди</ru>		
+		<ru>Убирает карту из очереди</ru>
 	</dropjukebox>
 
 	<clearjukebox>
 		<en>Clears the entire jukebox</en>
 		<de>Leert die Jukebox</de>
-		<ru>Очищает очередь</ru>		
+		<ru>Очищает очередь карт</ru>
 	</clearjukebox>
 
 	<add>
 		<en>Adds maps directly from MX via MX-ID</en>
 		<de>Fügt Maps direkt direkt hinzu über die MX-ID</de>
-		<ru>Добавляет карту из MX по ее идентификатору</ru>		
+		<ru>Добавляет карту из MX по ее идентификатору</ru>
 	</add>
 
 	<addthis>
@@ -142,7 +142,7 @@
 	<addlocal>
 		<en>Adds a local map (expects filename)</en>
 		<de>Fügt eine lokale map hinzu (erwartet Dateiname)</de>
-		<ru>Добаить локальную карту (по имени файла)</ru>		
+		<ru>Добаить локальную карту (по имени файла)</ru>
 	</addlocal>
 
 	<warn>
@@ -728,9 +728,9 @@
 	</message_nextenv>
 
 	<message_nextenv_failed>
-		<en>{#server}» {#admin}Load next map with same environment unavailable - include plugin.rasp_jukebox.php in [config/plugins.xml]</en>
-		<de>{#server}» {#admin}Laden der Map der selben Umgebung nicht möglich - bitte plugin.rasp_jukebox.php in [config/plugins.xml] eintragen</de>
-		<ru>{#server}» {#admin}Загрузка следующей карты в том же окружении недоступна - включите plugin.rasp_jukebox.php в [config/plugins.xml]</ru>
+		<en>{#server}» {#admin}Load next map with same environment unavailable - include plugin.rasp_jukebox.php and plugin.rasp.php in [config/plugins.xml]</en>
+		<de>{#server}» {#admin}Laden der Map der selben Umgebung nicht möglich - bitte plugin.rasp_jukebox.php und plugin.rasp.php in [config/plugins.xml] eintragen</de>
+		<ru>{#server}» {#admin}Загрузка следующей карты в том же окружении недоступна - включите плагины plugin.rasp_jukebox.php и plugin.rasp.php в [config/plugins.xml]</ru>
 	</message_nextenv_failed>
 
 	<message_restartmap>
@@ -946,103 +946,103 @@
 	<message_file_written>
 		<en>{#server}» {#highlite}{1} {#admin}written</en>
 		<de>{#server}» {#highlite}{1} {#admin}erfolgreich geschrieben</de>
-		<ru></ru>
+		<ru>{#server}» {#highlite}{1} {#admin}сохранён</ru>
 	</message_file_written>
 
 	<message_written_detailed>
 		<en>{#server}» {#admin}Successfully written {#highlite}{1}{#admin}!</en>
 		<de>{#server}» {#admin}Datei wurde erfolgreich geschrieben: {#highlite}{1}{#admin}!</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}Файл {#highlite}{1}{#admin} сохранён!</ru>
 	</message_written_detailed>
 
 	<message_failed_reading>
 		<en>{#server}» {#highlite}{1} {#error}not found, or error reading!</en>
 		<de>{#server}» {#highlite}{1} {#error}wurde nicht gefunden oder konnte nicht gelesen werden!</de>
-		<ru></ru>
+		<ru>{#server}» Файл {#highlite}{1} {#error}не найден, или ошибка чтения!</ru>
 	</message_failed_reading>
 
 	<message_file_read>
 		<en>{#server}» {#highlite}{1} {#admin}read</en>
 		<de>{#server}» {#highlite}{1} {#admin}gelesen</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}Файл {#highlite}{1} {#admin}считан</ru>
 	</message_file_read>
 
 	<message_clean_banlist>
 		<en>{#server}» {#admin}Cleaned ban list!</en>
 		<de>{#server}» {#admin}Liste mit gesperrten spielern (banlist) geleert!</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}Бан-лист очищен!</ru>
 	</message_clean_banlist>
 
 	<message_cleaned_bannediplist>
 		<en>{#server}» {#admin}Cleaned banned IPs list!</en>
 		<de>{#server}» {#admin}Liste mit gesperrten IPs (banlist) geleert!</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}Бан-лист IP-адресов очищен!</ru>
 	</message_cleaned_bannediplist>
 
 	<message_cleaned_blacklist>
 		<en>{#server}» {#admin}Cleaned black list!</en>
 		<de>{#server}» {#admin}Schwarze Liste (blacklist) geleert!</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}Чёрный список очищен!</ru>
 	</message_cleaned_blacklist>
 
 	<message_cleaned_guestlist>
 		<en>{#server}» {#admin}Cleaned guest list!</en>
 		<de>{#server}» {#admin}Gästeliste (guestlist) geleert!</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}Список "гостей" очищен!</ru>
 	</message_cleaned_guestlist>
 
 	<message_inavlid_url>
 		<en>{#server}» {#highlite}{1} {#error}is an invalid HTTP URL!</en>
 		<de>{#server}» {#highlite}{1} {#error}ist keine gültige Adresse!</de>
-		<ru></ru>
+		<ru>{#server}» {#error}HTTP-ссылка {#highlite}{1} {#error}не верна!</ru>
 	</message_inavlid_url>
 
 	<message_include_uptodate>
 		<en>{#server}» {#admin}Function unavailable - include plugin.uptodate.php in [config/plugins.xml]</en>
 		<de>{#server}» {#admin}Funktion nicht verfügbar - bitte plugin.uptodate.php in [config/plugins.xml] eintragen</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}Функция недоступна - включите plugin.uptodate.php в [config/plugins.xml]</ru>
 	</message_include_uptodate>
 
 	<message_access>
 		<en>{#server}» {#admin}Access control unavailable - include plugin.access.php in [config/plugins.xml]</en>
 		<de>{#server}» {#admin}Zugriffskontrolle nicht verfügbar! - bitte plugin.access.php in [config/plugins.xml] eintragen</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}Контроль доступа недоступен (вот каламбур!) - включите plugin.access.php в [config/plugins.xml]</ru>
 	</message_access>
 
 	<message_removemap>
 		<en>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s {#admin}removes map: {#highlite}{3}</en>
 		<de>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s {#admin}entfernt Map: {#highlite}{3}</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s {#admin}убирает карту: {#highlite}{3}</ru>
 	</message_removemap>
 
 	<message_removemap_failed>
 		<en>{#server}» {#error}Error removing map {#highlite}$i {1} {#error}!</en>
 		<de>{#server}» {#error}Fehler beim entfernen von {#highlite}$i {1} {#error}!</de>
-		<ru></ru>
+		<ru>{#server}» {#error}Ошибка убирания карты {#highlite}$i {1} {#error}!</ru>
 	</message_removemap_failed>
 
 	<message_erasemap>
 		<en>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s {#admin}erases map: {#highlite}{3}</en>
 		<de>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s {#admin}löscht Map: {#highlite}{3}</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s {#admin}удаляет карту: {#highlite}{3}</ru>
 	</message_erasemap>
 
 	<message_erasemap_failed>
 		<en>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s {#admin}Delete failed: {#highlite}{3}</en>
 		<de>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s {#admin}Löschen der Map fehlgeschlagen: {#highlite}{3}</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s {#admin}не смог удалить карту: {#highlite}{3}</ru>
 	</message_erasemap_failed>
 
 	<message_load_next_map_failed>
 		<en>{#server}» {#error}Error skip to next map!</en>
 		<de>{#server}» {#error}Fehler beim wechseln zur nächsten Map!</de>
-		<ru></ru>
+		<ru>{#server}» {#error}Ошибка пропуска карты!</ru>
 	</message_load_next_map_failed>
 
 	<message_admin_ignores_player>
 		<en>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s{#admin} ignores {#highlite}{3}$z$s{#admin}!</en>
 		<de>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s{#admin} verbietet {#highlite}{3}$z$s{#admin} das schreiben im Chat!</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s{#admin} игнорирует {#highlite}{3}$z$s{#admin}!</ru>
 	</message_admin_ignores_player>
 
 	<message_not_an_ignored_player>
@@ -1136,8 +1136,8 @@
 	</message_invalid_record>
 
 	<message_activate_localrecords>
-		<en>{#server}» {#admin}Local records unavailable - include plugin.local_records.php in [config/plugins.xml]</en>
-		<de>{#server}» {#admin}Lokale Rekorde nicht verfügbar - bitte plugin.local_records.php in [config/plugins.xml] einbinden</de>
+		<en>{#server}» {#admin}Local records unavailable - include plugin.local_records.php and plugin.rasp.php in [config/plugins.xml]</en>
+		<de>{#server}» {#admin}Lokale Rekorde nicht verfügbar - bitte plugin.local_records.php und plugin.rasp.php in [config/plugins.xml] einbinden</de>
 		<ru></ru>
 	</message_activate_localrecords>
 
@@ -1216,7 +1216,7 @@
 	<message_get_autoscorepanel>
 		<en>{#server}» {#admin}Automatic ScorePanel is {1}</en>
 		<de>{#server}» {#admin}Automatische Punktestandanzeige (ScorePanel) is {1}</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}Текущая "Автоматическая панель очков" - {1}</ru>
 	</message_get_autoscorepanel>
 
 	<message_set_roundsfinishpanel>
@@ -1399,6 +1399,12 @@
 		<ru>{#server}» {#highlite}{1}{#error} - неверный MX идентификатор карты!</ru>
 	</message_invalid_mxid>
 
+	<message_activate_rasp>
+		<en>{#server}» {#admin}Local records unavailable - include plugin.rasp.php in [config/plugins.xml]</en>
+		<de>{#server}» {#admin}Lokale Rekorde nicht verfügbar - bitte plugin.rasp.php in [config/plugins.xml] einbinden</de>
+	    <ru></ru>
+    </message_activate_rasp>
+
 	<message_add_permanent>
 		<en>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s {#admin}permanently adds current map: {#highlite}{3}</en>
 		<de>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s {#admin}fügt dauerhaft Map: {#highlite}{3}{#admin} dauerhaft hinzu</de>
@@ -1418,9 +1424,9 @@
 	</message_already_perm_added_map>
 
 	<message_activate_addthis>
-		<en>{#server}» {#admin}Addthis unavailable - include plugin.rasp_jukebox.php in [config/plugins.xml]</en>
-		<de>{#server}» {#admin}Addthis nicht verfügbar - bitte plugin.rasp_jukebox.php in [config/plugins.xml] einbinden</de>
-		<ru>{#server}» {#admin}Команда Addthis недоступна - включите плагин plugin.rasp_jukebox.php в файле [config/plugins.xml]</ru>
+		<en>{#server}» {#admin}Addthis unavailable - include plugin.rasp_jukebox.php and plugin.rasp.php in [config/plugins.xml]</en>
+		<de>{#server}» {#admin}Addthis nicht verfügbar - bitte plugin.rasp_jukebox.php und plugin.rasp.php in [config/plugins.xml] einbinden</de>
+		<ru>{#server}» {#admin}Команда Addthis недоступна - включите плагины plugin.rasp_jukebox.php и plugin.rasp.php в файле [config/plugins.xml]</ru>
 	</message_activate_addthis>
 
 	<message_not_found>

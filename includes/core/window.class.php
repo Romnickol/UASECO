@@ -51,8 +51,8 @@ class Window extends BaseClass {
 
 		$this->setAuthor('undef.de');
 		$this->setVersion('1.0.1');
-		$this->setBuild('2017-06-03');
-		$this->setCopyright('2014 - 2017 by undef.de');
+		$this->setBuild('2018-05-07');
+		$this->setCopyright('2014 - 2018 by undef.de');
 		$this->setDescription(new Message('class.window', 'window_description'));
 
 		// Empty content by default
@@ -319,7 +319,7 @@ class Window extends BaseClass {
 			$inner_gap = 0.625;
 			$offset = 0;
 			$line_height = 3.5;			// Default
-			if ($headings == true) {
+			if ($headings === true) {
 				$line_height = 3.4;		// Reduced because of the heading
 				$xml .= '<frame pos="2.5 -1.6" z-index="0.01">';
 				foreach (range(0, ($this->settings['columns'] - 1)) as $i) {
@@ -371,7 +371,7 @@ class Window extends BaseClass {
 
 				foreach ($this->content['data'][$i] as $value) {
 					if (is_array($value) && isset($value['login'])) {
-						if ($value['login'] == $login) {
+						if ($value['login'] === $login) {
 							$xml .= '<quad pos="'. $offset .' -'. ($line_height * $row) .'" z-index="0.02" size="'. ($column_width - ($inner_gap * 2)) .' 3.2" bgcolor="'. $this->layout['highlite']['self'] .'"/>';
 						}
 						else if (in_array($value['login'], $players)) {
@@ -410,10 +410,10 @@ class Window extends BaseClass {
 					if (is_array($value) && isset($value['image']) && !empty($value['image'])) {
 						$posx = ($last_element_width + $offset);
 						if (isset($this->settings['halign'][$innercol])) {
-							if (strtolower($this->settings['halign'][$innercol]) == 'center') {
+							if (strtolower($this->settings['halign'][$innercol]) === 'center') {
 								$posx += ($element_width / 2);
 							}
-							else if (strtolower($this->settings['halign'][$innercol]) == 'right') {
+							else if (strtolower($this->settings['halign'][$innercol]) === 'right') {
 								$posx += $element_width;
 							}
 						}
@@ -425,10 +425,10 @@ class Window extends BaseClass {
 						$sizew		= ($element_width - ($inner_gap / 2));
 						$posx		= (($inner_gap / 2) + $last_element_width + $offset);
 						$posy		= -($line_height * $row + 1.45);
-						if (isset($this->settings['halign'][$innercol]) && strtolower($this->settings['halign'][$innercol]) == 'center') {
+						if (isset($this->settings['halign'][$innercol]) && strtolower($this->settings['halign'][$innercol]) === 'center') {
 							$posx += ($sizew / 2);
 						}
-						else if (isset($this->settings['halign'][$innercol]) && strtolower($this->settings['halign'][$innercol]) == 'right') {
+						else if (isset($this->settings['halign'][$innercol]) && strtolower($this->settings['halign'][$innercol]) === 'right') {
 							$posx += ($sizew - $inner_gap);
 						}
 
@@ -488,11 +488,11 @@ class Window extends BaseClass {
 	public function buildButtons () {
 		global $aseco;
 
-		if ($this->settings['mode'] == 'columns') {
+		if ($this->settings['mode'] === 'columns') {
 			$totalentries			= count($this->content['data']);
 			$this->content['maxpage']	= ceil($totalentries / ($this->settings['columns'] * 25)) - 1;
 		}
-		else if ($this->settings['mode'] == 'pages') {
+		else if ($this->settings['mode'] === 'pages') {
 			$this->content['maxpage']	= count($this->content['data']) - 1;
 		}
 
@@ -619,7 +619,7 @@ class Window extends BaseClass {
 
 		// Content
 		$xml .= '<frame pos="2.5 -10.5" z-index="0.05">';
-		if ($this->settings['add_background'] == true) {
+		if ($this->settings['add_background'] === true) {
 			$xml .= '<quad pos="0 0" z-index="0" size="200 90" bgcolor="FFFFFF33"/>';
 		}
 		$xml .= '%content%';
@@ -648,8 +648,13 @@ class Window extends BaseClass {
 
 		// Button
 		if (!empty($this->content['button_title']) && !empty($this->content['button_link'])) {
+			$protocol = explode('://', $this->content['button_link']);
+			$attr = 'manialink';
+			if (in_array($protocol[0], array('http', 'ftp'))) {
+				$attr = 'url';
+			}
 			$xml .= '<frame pos="101.5 -104.4" z-index="0.04">';
-			$xml .= '<label pos="0 0" z-index="0.02" size="75 4.875" class="labels" halign="center" valign="center2" textsize="1" scale="0.8" focusareacolor1="0099FFFF" focusareacolor2="DDDDDDFF" manialink="'. $this->content['button_link'] .'" text="'. $this->content['button_title'] .'"/>';
+			$xml .= '<label pos="0 0" z-index="0.02" size="75 4.875" class="labels" halign="center" valign="center2" textsize="1" scale="0.8" focusareacolor1="0099FFFF" focusareacolor2="DDDDDDFF" '. $attr .'="'. $this->content['button_link'] .'" text="'. $this->content['button_title'] .'"/>';
 			$xml .= '</frame>';
 		}
 
@@ -882,7 +887,7 @@ EOL;
 	public function normalizeString ($string) {
 		global $aseco;
 
-		if ($this->settings['stripcodes'] == true) {
+		if ($this->settings['stripcodes'] === true) {
 			// Remove all formating codes
 			$string = $aseco->stripStyles($string);
 		}

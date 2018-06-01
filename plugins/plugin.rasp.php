@@ -47,8 +47,8 @@ class PluginRasp extends Plugin {
 
 		$this->setAuthor('undef.de');
 		$this->setVersion('1.0.1');
-		$this->setBuild('2017-05-28');
-		$this->setCopyright('2014 - 2017 by undef.de');
+		$this->setBuild('2018-05-10');
+		$this->setCopyright('2014 - 2018 by undef.de');
 		$this->setDescription('Provides rank and personal best handling, and related chat commands.');
 
 		$this->addDependence('PluginManialinks',	Dependence::REQUIRED,	'1.0.0', null);
@@ -87,7 +87,7 @@ class PluginRasp extends Plugin {
 
 		// prune records and times entries for maps deleted from server
 		if ($this->prune_records_times) {
-			$aseco->console('[Rasp] Pruning `%prefix%records`, `%prefix%ratings` and `%prefix%times` for deleted maps:');
+			$aseco->console('[Rasp] Pruning `'. $aseco->db->table_prefix .'records`, `'. $aseco->db->table_prefix .'ratings` and `'. $aseco->db->table_prefix .'times` for deleted maps:');
 
 			// Get list of maps IDs with records in the database
 			$query = "
@@ -232,7 +232,7 @@ class PluginRasp extends Plugin {
 		if ($this->feature_ranks) {
 			$this->showRank($player->login);
 		}
-		if ( ($this->feature_stats) && ($aseco->startup_phase == false) ) {
+		if ( ($this->feature_stats) && ($aseco->startup_phase === false) ) {
 			$this->showPb($player, $aseco->server->maps->current->id, $this->always_show_pb);
 		}
 	}
@@ -245,11 +245,13 @@ class PluginRasp extends Plugin {
 
 	public function onPlayerFinish ($aseco, $finish_item) {
 
+		$checkpoints = (isset($aseco->plugins['PluginCheckpoints']->checkpoints[$finish_item->player_login]) ? $aseco->plugins['PluginCheckpoints']->checkpoints[$finish_item->player_login]->current['cps'] : array());
+
 		// check for actual finish & no Laps mode
-		if ($this->feature_stats && $finish_item->score > 0 && $aseco->server->gameinfo->mode != Gameinfo::LAPS) {
+		if ($this->feature_stats && $finish_item->score > 0 && $aseco->server->gameinfo->mode !== Gameinfo::LAPS) {
 			$this->insertTime(
 				$finish_item,
-				isset($finish_item->checkpoints) ? implode(',', $finish_item->checkpoints) : ''
+				isset($checkpoints) ? implode(',', $checkpoints) : ''
 			);
 		}
 	}
@@ -642,7 +644,7 @@ class PluginRasp extends Plugin {
 		// find ranked record
 		for ($i = 0; $i < $aseco->plugins['PluginLocalRecords']->records->getMaxRecords(); $i++) {
 			if (($rec = $aseco->plugins['PluginLocalRecords']->records->getRecord($i)) !== false) {
-				if ($rec->player->login == $player->login) {
+				if ($rec->player->login === $player->login) {
 					$ret['time'] = $rec->score;
 					$ret['rank'] = $i + 1;
 					$found = true;
@@ -657,7 +659,7 @@ class PluginRasp extends Plugin {
 		// check whether to show PB (e.g. for /pb)
 		if (!$always_show) {
 			// check for ranked record that's already shown at map start
-			if ($found && $aseco->plugins['PluginLocalRecords']->settings['show_recs_before'] == 2) {
+			if ($found && $aseco->plugins['PluginLocalRecords']->settings['show_recs_before'] === 2) {
 				return;
 			}
 		}
@@ -764,8 +766,9 @@ class PluginRasp extends Plugin {
 	public function insertTime ($time, $cps) {
 		global $aseco;
 
-		$pid = $time->player->id;
-		if ($pid != 0) {
+		$player = $aseco->server->players->getPlayerByLogin($time->player_login);
+		$map = $aseco->server->maps->getMapByUid($time->map_uid);
+		if ($player->id !== 0) {
 			$query = "
 			INSERT INTO `%prefix%times` (
 				`MapId`,
@@ -776,8 +779,8 @@ class PluginRasp extends Plugin {
 				`Checkpoints`
 			)
 			VALUES (
-				". $time->map->id .",
-				". $pid .",
+				". $map->id .",
+				". $player->id .",
 				". $aseco->server->gameinfo->mode .",
 				". $aseco->db->quote(date('Y-m-d H:i:s', time() - date('Z'))) .",
 				". $time->score .",
@@ -794,7 +797,7 @@ class PluginRasp extends Plugin {
 			}
 		}
 		else {
-			trigger_error('[Rasp] ERROR: Could not get Player ID for ['. $time->player->login .']!', E_USER_WARNING);
+			trigger_error('[Rasp] ERROR: Could not get Player ID for ['. $player->login .']!', E_USER_WARNING);
 		}
 	}
 
@@ -804,13 +807,13 @@ class PluginRasp extends Plugin {
 	#///////////////////////////////////////////////////////////////////////#
 	*/
 
-	public function deleteTime ($cid, $pid) {
+	public function deleteTime ($map_id, $player_id) {
 		global $aseco;
 
 		$query = "
 		DELETE FROM `%prefix%times`
-		WHERE `MapId` = ". $cid ."
-		AND `PlayerId` = ". $pid .";
+		WHERE `MapId` = ". $map_id ."
+		AND `PlayerId` = ". $player_id .";
 		";
 		$aseco->db->query($query);
 		if ($aseco->db->affected_rows === -1) {
@@ -847,7 +850,7 @@ class PluginRasp extends Plugin {
 
 		foreach ($aseco->server->maps->map_list as $map) {
 			// Check for wildcard, map name or author name
-			if ($wildcard == '*') {
+			if ($wildcard === '*') {
 				$pos = 0;
 			}
 			else {
@@ -858,7 +861,7 @@ class PluginRasp extends Plugin {
 			}
 
 			// Check for environment
-			if ($env == '*') {
+			if ($env === '*') {
 				$pose = 0;
 			}
 			else {

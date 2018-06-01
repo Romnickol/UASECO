@@ -35,7 +35,7 @@
 class PlayerList extends BaseClass {
 	public $player_list;
 
-	private $debug		= false;
+	private $debug = false;
 
 
 	/*
@@ -48,9 +48,10 @@ class PlayerList extends BaseClass {
 		$this->debug = $debug;
 
 		$this->setAuthor('undef.de');
+		$this->setContributors(array('brakerb'));
 		$this->setVersion('1.0.1');
-		$this->setBuild('2017-08-18');
-		$this->setCopyright('2014 - 2017 by undef.de');
+		$this->setBuild('2018-05-09');
+		$this->setCopyright('2014 - 2018 by undef.de');
 		$this->setDescription('Manages Players on the server, add/remove Players and provides several get functions.');
 
 		$this->player_list = array();
@@ -75,7 +76,7 @@ class PlayerList extends BaseClass {
 	public function getSpectatorCount () {
 		$count = 0;
 		foreach ($this->player_list as $player) {
-			if ($player->is_spectator == true) {
+			if ($player->is_spectator === true) {
 				$count += 1;
 			}
 		}
@@ -89,7 +90,7 @@ class PlayerList extends BaseClass {
 	*/
 
 	public function addPlayer ($player) {
-		if (isset($player) && is_object($player) && $player instanceof Player && $player->login != '') {
+		if (isset($player) && is_object($player) && $player instanceof Player && $player->login !== '') {
 
 			// Check for existing Player, otherwise insert into Database
 			$this->checkDatabase($player);
@@ -99,9 +100,7 @@ class PlayerList extends BaseClass {
 
 			return true;
 		}
-		else {
-			return false;
-		}
+		return false;
 	}
 
 	/*
@@ -111,8 +110,7 @@ class PlayerList extends BaseClass {
 	*/
 
 	public function removePlayer ($login) {
-		if (isset($this->player_list[$login])) {
-			$this->player_list[$login];
+		if (array_key_exists($login, $this->player_list)) {
 			unset($this->player_list[$login]);
 			return true;
 		}
@@ -126,13 +124,10 @@ class PlayerList extends BaseClass {
 	*/
 
 	public function getPlayerByLogin ($login) {
-		$login = (string)$login;
-		if (!empty($login) && isset($this->player_list[$login])) {
+		if (array_key_exists($login, $this->player_list)) {
 			return $this->player_list[$login];
 		}
-		else {
-			return false;
-		}
+		return false;
 	}
 
 	/*
@@ -144,14 +139,12 @@ class PlayerList extends BaseClass {
 	public function getPlayerById ($id) {
 		if (!empty($id)) {
 			foreach ($this->player_list as $player) {
-				if ($player->id == $id) {
+				if ($player->id === (int)$id) {
 					return $player;
 				}
 			}
 		}
-		else {
-			return false;
-		}
+		return false;
 	}
 
 	/*
@@ -163,14 +156,12 @@ class PlayerList extends BaseClass {
 	public function getPlayerByPid ($pid) {
 		if (!empty($pid)) {
 			foreach ($this->player_list as $player) {
-				if ($player->pid == $pid) {
+				if ($player->pid === $pid) {
 					return $player;
 				}
 			}
 		}
-		else {
-			return false;
-		}
+		return false;
 	}
 
 	/*
@@ -183,8 +174,8 @@ class PlayerList extends BaseClass {
 	public function getPlayerIdByLogin ($login, $forcequery = false) {
 		global $aseco;
 
-		if (isset($this->server->players->player_list[$login]) && $this->server->players->player_list[$login]->id > 0 && !$forcequery) {
-			return $this->server->players->player_list[$login]->id;
+		if (array_key_exists($login, $this->player_list) && $this->player_list[$login]->id > 0 && $forcequery === false) {
+			return (int)$this->player_list[$login]->id;
 		}
 		else {
 			$id = 0;
@@ -204,7 +195,7 @@ class PlayerList extends BaseClass {
 				}
 				$res->free_result();
 			}
-			return $id;
+			return (int)$id;
 		}
 	}
 
@@ -218,8 +209,8 @@ class PlayerList extends BaseClass {
 	public function getPlayerNickname ($login, $forcequery = false) {
 		global $aseco;
 
-		if (isset($this->server->players->player_list[$login]) && $this->server->players->player_list[$login]->nickname != '' && !$forcequery) {
-			return $this->server->players->player_list[$login]->nickname;
+		if (array_key_exists($login, $this->player_list) && $this->player_list[$login]->id > 0 && $forcequery === false) {
+			return $this->player_list[$login]->nickname;
 		}
 		else {
 			$nickname = 'Unknown';
@@ -383,7 +374,7 @@ class PlayerList extends BaseClass {
 					`Continent` = ". $aseco->db->quote($aseco->continent->continentToAbbreviation($player->continent)) .",
 					`Nation` = ". $aseco->db->quote($player->nation) .",
 					`LastVisit` = NOW()
-				WHERE `Login`= ". $aseco->db->quote($player->login) .";
+				WHERE `Login` = ". $aseco->db->quote($player->login) .";
 				";
 				$result = $aseco->db->query($query);
 				if (!$result) {
@@ -426,7 +417,7 @@ class PlayerList extends BaseClass {
 
 				$result = $aseco->db->query($query);
 				if ($result) {
-					$player->id = $aseco->db->lastid();
+					$player->id = (int)$aseco->db->lastid();
 				}
 				else {
 					trigger_error('[PlayerList] Could not insert connecting player! ('. $aseco->db->errmsg() .')'. CRLF .'sql = '. $query, E_USER_WARNING);
@@ -479,7 +470,12 @@ class PlayerList extends BaseClass {
 			$res->free_result();
 
 			if (!empty($players)) {
-				$max_records = $aseco->plugins['PluginLocalRecords']->records->getMaxRecords();
+				if (isset($aseco->plugins['PluginLocalRecords']) === true) {
+					$max_records = $aseco->plugins['PluginLocalRecords']->records->getMaxRecords();
+				}
+				else {
+					$max_records = 500;	// Use a default value
+				}
 
 //				// RASP OLD: Get ranked records for all maps
 //				foreach ($aseco->server->maps->map_list as $map) {
@@ -542,7 +538,7 @@ class PlayerList extends BaseClass {
 						if (isset($players[$pid])) {
 							$count = 1;
 							foreach ($data[$map_id] as $ply_pid) {
-								if ($pid == $ply_pid) {
+								if ($pid === $ply_pid) {
 									$rank = $count;
 									break;
 								}
@@ -576,7 +572,7 @@ class PlayerList extends BaseClass {
 					if ($aseco->db->affected_rows === -1) {
 						$aseco->console('[PlayerList][ERROR] Could not insert any player averages ('. $aseco->db->errmsg() .') for statement ['. $query .']');
 					}
-					else if ($aseco->db->affected_rows != count($players)) {
+					else if ($aseco->db->affected_rows !== count($players)) {
 						$aseco->console('[PlayerList][ERROR] Could not insert all '. count($players) .' player averages ('. $aseco->db->errmsg() .')! Please increase the database settings "max_allowed_packet" to a larger value!');
 					}
 				}
