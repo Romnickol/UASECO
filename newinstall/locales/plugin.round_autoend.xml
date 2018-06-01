@@ -4,25 +4,30 @@
 	Version:	2018-04-21
 	Authors:	[EN] undef.de
 			[DE] undef.de
+			[RU] Romnickol
 	//-->
 
 	<plugin_description>
 		<en>Ends the current round after a computed amount of time automatically.</en>
 		<de>Beended eine Runde automatisch nach einem berechneten Zeitraum.</de>
+		<ru>Заканчивает раунд игры после рассчитанного количества времени.</ru>
 	</plugin_description>
 
 	<message_round_info>
 		<en>{#server}» Round will be automatically ending after {#highlite}{1}{#server}, based upon author time {#highlite}{2}{#server}.</en>
 		<de>{#server}» Die Runde wird automatisch beendet nach {#highlite}{1}{#server}, basierend auf der Autorenzeit {#highlite}{2}{#server}.</de>
+		<ru>{#server}» Раунд будет автоматически завершен через {#highlite}{1}{#server}, так как авторское время - {#highlite}{2}{#server}.</ru>
 	</message_round_info>
 
 	<message_round_end>
 		<en>{#server}» Round automatically ended after {#highlite}{1}{#server}</en>
 		<de>{#server}» Runde endete automatisch nach {#highlite}{1}{#server}</de>
+		<ru>{#server}» Раунд завершился спустя {#highlite}{1}{#server}</ru>
 	</message_round_end>
 
 	<message_warmup_round_end>
 		<en>{#server}» WarmUp-Round automatically ended after {#highlite}{1}{#server}</en>
 		<de>{#server}» Aufwärmrunde endete automatisch nach {#highlite}{1}{#server}</de>
+		<ru>{#server}» Раунд-разогрев завершился спустя {#highlite}{1}{#server}</ru>
 	</message_warmup_round_end>
 </locales>

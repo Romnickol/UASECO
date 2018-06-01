@@ -4,6 +4,7 @@
 	Version:	2017-04-23
 	Authors:	[EN] undef.de
 			[DE] undef.de
+			[RU] Romnickol
 	//-->
 
 	<windowlist_description>
@@ -15,7 +16,7 @@
 	<window_description>
 		<en>Provides a comfortable, configurable styled Manialink window.</en>
 		<de>Bietet ein komfortables und konfigurierbares Manialink-Fenster.</de>
-		<ru>Показывает красивые, настраиваеиые окна Маниалинк.</ru>
+		<ru>Показывает красивые, настраиваемые окна в стиле Manialink.</ru>
 	</window_description>
 
 	<slash_lastwin>

@@ -4,25 +4,30 @@
 	Version:	2017-05-18
 	Authors:	[EN] undef.de
 			[DE] undef.de
+			[RU] Romnickol
 	//-->
 
 	<plugin_description>
 		<en>Handle the Modescript Callbacks send by the dedicated server and related settings.</en>
 		<de>Behandelt Spielmodus Rücksprungfunktionen die vom dedizierter Server gesendet werden und relevante Konfigurationen.</de>
+		<ru>Управляет Modescript Callbacks и их настройками, посылаемыми сервером.</ru>
 	</plugin_description>
 
 	<message_reload>
 		<en>{#admin}» Reload of the configuration "config/modescript_settings.xml" done.</en>
 		<de>{#admin}» Das neuladen der Konfiguration "config/modescript_settings.xml" erfolgreich erledigt.</de>
+		<ru>{#admin}» Конфигурация "config/modescript_settings.xml" успешно перезагружена.</ru>
 	</message_reload>
 
 	<message_help>
 		<en>{#admin}» Use "/modescript reload" to reload "config/modescript_settings.xml".</en>
 		<de>{#admin}» Benutze "/modescript reload" um die Konfigurationdatei "config/modescript_settings.xml" neu einzulesen.</de>
+		<ru>{#admin}» Используй "/modescript reload", чтобы перезагрузить конфигурацию "config/modescript_settings.xml".</ru>
 	</message_help>
 
 	<window_ui_properties>
 		<en>Setup of the user-interface properties</en>
 		<de>Einstellungen der Benutzeroberfläche</de>
+		<ru>Настройка пользовательского интерфейса</ru>
 	</window_ui_properties>
 </locales>

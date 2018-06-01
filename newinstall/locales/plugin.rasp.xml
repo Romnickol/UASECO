@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <locales>
-	
+	<!--
+	Authors:	[RU] Romnickol
+	//-->
+
 	<rank>
 		<en>{#server}» {#record}Your server rank is {#rank}{1}{#record} of {#highlite}{2}{#record} Average: {#highlite}{3}</en>
 		<de>{#server}» {#record}Dein Serverrang ist {#rank}{1}{#record} von {#highlite}{2}{#record} Durchschnittsrang: {#highlite}{3}</de>

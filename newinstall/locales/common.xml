@@ -4,6 +4,7 @@
 	Version:	2017-04-18
 	Authors:	[EN] undef.de
 			[DE] askuri
+			[RU] Romnickol
 	//-->
 
 	<yes>
@@ -70,13 +71,13 @@
 	<startup>
 		<en>{#server}» {#highlite}UASECO/{1}{#server} running on {#highlite}{2}{#server}:{#highlite}{3}{#server}</en>
 		<de>{#server}» {#highlite}UASECO/{1}{#server} laufend auf {#highlite}{2}{#server}:{#highlite}{3}{#server}</de>
-		<ru>{#server}» {#highlite}Система UASECO/{1}{#server} работает на {#highlite}{2}{#server}:{#highlite}{3}{#server}</ru>
+		<ru>{#server}» {#highlite}Система UASECO RU/{1}{#server} работает на {#highlite}{2}{#server}:{#highlite}{3}{#server}</ru>
 	</startup>
 
 	<welcome>
 		<en>{#server}» {#welcome}Welcome {#highlite}{1}{#welcome} to {#highlite}{2}$z$s{br}{#server}» {#welcome}This server uses {#highlite}UASECO/{3}{#welcome} to manage your records.</en>
 		<de>{#server}» {#welcome}Willkommen {#highlite}{1}{#welcome} auf {#highlite}{2}$z$s{br}{#server}» {#welcome}Dieser Server verwendet {#highlite}UASECO/{3}{#welcome} zur Verwaltung deiner Rekorde.</de>
-		<ru>{#server}» {#highlite}{1}{#welcome}, добро пожаловать на {#highlite}{2}$z$s{br}{#server}» {#welcome}На этом сервере работает {#highlite}UASECO/{3}{#welcome} для управления системой.</ru>
+		<ru>{#server}» {#highlite}{1}{#welcome}, добро пожаловать на {#highlite}{2}$z$s{br}{#server}» {#welcome}На этом сервере работает {#highlite}UASECO RU/{3}{#welcome} для управления системой. Русификация от $L[http://github.com/Romnickol/UASECO]Romnickol$L.</ru>
 	</welcome>
 
 	<player_warning>

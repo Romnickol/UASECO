@@ -4,20 +4,24 @@
 	Version:	2017-06-03
 	Authors:	[EN] undef.de
 			[DE] undef.de
+			[RU] Romnickol
 	//-->
 
 	<plugin_description>
 		<en>Displays a information bar with multiple personalized values.</en>
 		<de>Zeigt eine Informationsleiste mit verschiedenen personalisierten Werten an.</de>
+		<ru>Отображает информационную панель.</ru>
 	</plugin_description>
 
 	<chat_infobar>
 		<en>Command for the InfoBar to reload configuration: "/infobar reload"</en>
 		<de>Kommando um die Konfiguration der InfoBar neu zu laden: "/infobar reload"</de>
+		<ru>Команда перезапуска информационной панели: "/infobar reload"</ru>
 	</chat_infobar>
 
 	<message_chat_infobar_reload>
 		<en>{#admin}» Reload of the configuration "config/info_bar.xml" done.</en>
 		<de>{#admin}» Neuladen der Konfiguration "config/info_bar.xml" erfolgreich.</de>
+		<ru>{#admin}» Конфигурация панели "config/info_bar.xml" успешно перезагружена.</ru>
 	</message_chat_infobar_reload>
 </locales>

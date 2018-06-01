@@ -4,7 +4,7 @@
 	Version:	2018-05-06
 	Authors:	[EN] undef.de
 			[DE] askuri
-			На русском - Romnickol
+			[RU] Romnickol
 	//-->
 
 	<plugin_description>
@@ -22,7 +22,7 @@
 	<helpall>
 		<en>Displays help for available /admin commands (Window)</en>
 		<de>Zeigt die Hilfe für verfügbare /admin Kommandos (Fenster)</de>
-		<ru>Справка о доступных /admin-командах (в окне).
+		<ru>Справка о доступных /admin-командах (в окне).</ru>
 	</helpall>
 
 	<setservername>
@@ -1048,169 +1048,169 @@
 	<message_not_an_ignored_player>
 		<en>{#server}» {#highlite}{1}{#error} is not an ignored player!</en>
 		<de>{#server}» {#highlite}{1}{#error} ist nicht auf der Ignorierliste!</de>
-		<ru></ru>
+		<ru>{#server}» {#highlite}{1}{#error} не находится в списке игнора!</ru>
 	</message_not_an_ignored_player>
 
 	<message_unignore>
 		<en>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s{#admin} un-ignores {#highlite}{3}</en>
 		<de>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s{#admin} erlaubt {#highlite}{3}$z{#admin} wieder das schreiben im Chat</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s{#admin} снимает игнорирование {#highlite}{3}</ru>
 	</message_unignore>
 
 	<message_nobody_muted>
 		<en>{#server}» {#error}No muted/ignored players found!</en>
 		<de>{#server}» {#error}Es ist keiner auf der Ignorierliste!</de>
-		<ru></ru>
+		<ru>{#server}» {#error}Нет игнорируемых игроков!</ru>
 	</message_nobody_muted>
 
 	<message_mutelist_cleaned>
 		<en>{#server}» {#admin}Cleaned global mute/ignore list!</en>
 		<de>{#server}» {#admin}Ignorierliste geleert!</de>
-		<ru></ru>
+		<ru>{#server}» {#error}Список глобальных игнорирований очищен!</ru>
 	</message_mutelist_cleaned>
 
 	<message_add_admin> <!-- Also for Operator -->
 		<en>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s{#admin} adds new {3}$z$s{#admin}: {#highlite}{4}$z$s{#admin}!</en>
 		<de>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s{#admin} fügt neuen {3}$z$s{#admin} hinzu: {#highlite}{4}$z$s{#admin}!</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s{#admin} добавляет нового игрока: {3}$z$s{#admin} {#highlite}{4}$z$s{#admin}!</ru>
 	</message_add_admin>
 
 	<message_already_admin> <!-- Also for Operator -->
 		<en>{#server}» {#error}Login {#highlite}$i {1}{#error} is already in {2} list!</en>
 		<de>{#server}» {#error}Spieler {#highlite}$i {1}{#error} ist bereits in der {2} Liste!</de>
-		<ru></ru>
+		<ru>{#server}» {#error}Игрок с логином {#highlite}$i {1}{#error} уже {2}!</ru>
 	</message_already_admin>
 
 	<message_remove_admin> <!-- Also for Operator -->
 		<en>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s{#admin} removes {3}$z$s{#admin}: {#highlite}{4}$z$s{#admin}!</en>
 		<de>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s{#admin} entfernt {3}$z$s{#admin}: {#highlite}{4}$z$s{#admin}!</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s{#admin} убирает права {3}$z$s{#admin}а у {#highlite}{4}$z$s{#admin}!</ru>
 	</message_remove_admin>
 
 	<message_no_admin> <!-- Also for Operator -->
 		<en>{#server}» {#error}Login {#highlite}$i {1}{#error} is not in {2} List!</en>
 		<de>{#server}» {#error}Login {#highlite}$i {1}{#error} ist nicht in der {2} Liste!</de>
-		<ru></ru>
+		<ru>{#server}» {#error}Игрок с логином {#highlite}$i {1}{#error} отсутствует в списке {2}ов!</ru>
 	</message_no_admin>
 
 	<message_no_masteradmins_found>
 		<en>{#server}» {#error}No MasterAdmin(s) found!</en>
 		<de>{#server}» {#error}Keine MasterAdmin(s) gefunden!</de>
-		<ru></ru>
+		<ru>{#server}» {#error}Нет мастерадминов!</ru>
 	</message_no_masteradmins_found>
 
 	<message_no_admins_found>
 		<en>{#server}» {#error}No admin(s) found!</en>
 		<de>{#server}» {#error}Keine Admin(s) gefunden!</de>
-		<ru></ru>
+		<ru>{#server}» {#error}Нет администраторов!</ru>
 	</message_no_admins_found>
 
 	<message_no_operators_found>
 		<en>{#server}» {#error}No operator(s) found!</en>
 		<de>{#server}» {#error}Keine Operatoren gefunden!</de>
-		<ru></ru>
+		<ru>{#server}» {#error}Нет операторов!</ru>
 	</message_no_operators_found>
 
 	<message_invalid_admin_tier>
 		<en>{#server}» {#highlite}{1}{#error} is not a valid administrator tier!</en>
 		<de>{#server}» {#highlite}{1}{#error} ist kein gültiger Adminrang!</de>
-		<ru></ru>
+		<ru>{#server}» {#highlite}{1}{#error} не является верным рангом администратора!</ru>
 	</message_invalid_admin_tier>
 
 	<message_no_message>
 		<en>{#server}» {#error}No message!</en>
 		<de>{#server}» {#error}Das ist keine Nachricht!</de>
-		<ru></ru>
+		<ru>{#server}» {#error}Нет сообщения.</ru>
 	</message_no_message>
 
 	<message_record_removed>
 		<en>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s {#admin}removes record {#highlite}{3}{#admin} by {#highlite}{4}</en>
 		<de>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s {#admin}entfernt Rekord {#highlite}{3}{#admin} von {#highlite}{4}</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}{1}$z$s {#highlite}{2}$z$s {#admin}удаляет рекорд {#highlite}{3}{#admin} игрока {#highlite}{4}</ru>
 	</message_record_removed>
 
 	<message_invalid_record>
 		<en>{#server}» {#error}No such record {#highlite}$i {1}{#error}!</en>
 		<de>{#server}» {#error}Ungültiger Rekord{#highlite}$i {1}{#error}!</de>
-		<ru></ru>
+		<ru>{#server}» {#error}Нет такого рекорда: {#highlite}$i {1}{#error}!</ru>
 	</message_invalid_record>
 
 	<message_activate_localrecords>
 		<en>{#server}» {#admin}Local records unavailable - include plugin.local_records.php and plugin.rasp.php in [config/plugins.xml]</en>
 		<de>{#server}» {#admin}Lokale Rekorde nicht verfügbar - bitte plugin.local_records.php und plugin.rasp.php in [config/plugins.xml] einbinden</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}Локальные рекорды недоступны - включите plugin.local_records.php и plugin.rasp.php в [config/plugins.xml]</ru>
 	</message_activate_localrecords>
 
 	<message_records_on_map_deleted>
 		<en>{#server}» {#admin}Deleted all records and times for map: {#highlite}{1}</en>
 		<de>{#server}» {#admin}Deleted all records und times for map: {#highlite}{1}</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}Удалены все рекорды и результаты на карте {#highlite}{1}</ru>
 	</message_records_on_map_deleted>
 
 	<message_cant_find_mapid>
 		<en>{#server}» {#error}Cant find MapId for map: {#highlite}$i {1} / {2}</en>
 		<de>{#server}» {#error}Kann die MapID nicht finden: {#highlite}$i {1} / {2}</de>
-		<ru></ru>
+		<ru>{#server}» {#error}Невозможно найти идентификатор (MapId) карты: {#highlite}$i {1} / {2}</ru>
 	</message_cant_find_mapid>
 
 	<message_set_allowmapdownload>
 		<en>{#server}» {#admin}AllowMapDownload set to {1}</en>
 		<de>{#server}» {#admin}Erlaube Streckendownload (AllowMapDownload) gesetzt zu {1}</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}Параметр AllowMapDownload установлен в {1}</ru>
 	</message_set_allowmapdownload>
 
 	<message_get_allowmapdownload>
 		<en>{#server}» {#admin}AllowMapDownload is currently {1}</en>
 		<de>{#server}» {#admin}Erlaube Streckendownload (AllowMapDownload) ist aktuell {1}</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}Параметр AllowMapDownload сейчас {1}</ru>
 	</message_get_allowmapdownload>
 
 	<message_set_autotimelimit>
 		<en>{#server}» {#admin}Auto TimeLimit set to {1}</en>
 		<de>{#server}» {#admin}Automatisches Zeitlimit (autotime) gesetzt auf {1}</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}Авторасчёт времени установлен в {1}</ru>
 	</message_set_autotimelimit>
 
 	<message_get_autotimelimit>
 		<en>{#server}» {#admin}Auto TimeLimit is {1}</en>
 		<de>{#server}» {#admin}Automatisches Zeitlimit (autotime) ist {1}</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}Авторасчёт времени сейчас {1}</ru>
 	</message_get_autotimelimit>
 
 	<message_activate_autotime>
 		<en>{#server}» {#admin}Auto TimeLimit unavailable - include plugin.autotime.php in [config/plugins.xml]</en>
 		<de>{#server}» {#admin}Automatisches Zeitlimit nicht verfügbar - bitte plugin.autotime.php in [config/plugins.xml] einbinden</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}Авторасчёт времени сейчас недоступен - включите plugin.autotime.php в [config/plugins.xml]</ru>
 	</message_activate_autotime>
 
 	<message_set_disablerespawn>
 		<en>{#server}» {#admin}DisableRespawn set to {1} on the next map</en>
 		<de>{#server}» {#admin}Respawnverbot (DisableRespawn) gesetzt auf {1} ab der nächsten Map</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}Параметр DisableRespawn будет{#highlite} {1} {#admin}на следующей карте!</ru>
 	</message_set_disablerespawn>
 
 	<message_get_disablerespawn>
 		<en>{#server}» {#admin}DisableRespawn is {1}</en>
 		<de>{#server}» {#admin}Respawnverbot (DisableRespawn) ist {1}</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}Параметр DisableRespawn сейчас {#highlite} {1}</ru>
 	</message_get_disablerespawn>
 
 	<message_set_forceshowopp>
 		<en>{#server}» {#admin}ForceShowAllOpponents set to {#highlite} {1} on the next map!</en>
 		<de>{#server}» {#admin}Anzeigen aller Gegner (ForceShowAllOpponents) gesetzt zu {#highlite} {1} ab der nächsten Map!</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}Параметр ForceShowAllOpponents будет{#highlite} {1} {#admin}на следующей карте!</ru>
 	</message_set_forceshowopp>
 
 	<message_get_forceshowopp>
 		<en>{#server}» {#admin}ForceShowAllOpponents is {#highlite} {1}</en>
 		<de>{#server}» {#admin}Anzeigen aller Gegner (ForceShowAllOpponents) ist {1}!</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}Параметр ForceShowAllOpponents сейчас {#highlite} {1}</ru>
 	</message_get_forceshowopp>
 
 	<message_set_autoscorepanel>
 		<en>{#server}» {#admin}Automatic ScorePanel set to {1}</en>
 		<de>{#server}» {#admin}Automatische Punktestandanzeige (ScorePanel) gesetzt auf {1}</de>
-		<ru></ru>
+		<ru>{#server}» {#admin}"Автоматическая панель очков" установлена в {1}</ru>
 	</message_set_autoscorepanel>
 
 	<message_get_autoscorepanel>
@@ -1402,7 +1402,7 @@
 	<message_activate_rasp>
 		<en>{#server}» {#admin}Local records unavailable - include plugin.rasp.php in [config/plugins.xml]</en>
 		<de>{#server}» {#admin}Lokale Rekorde nicht verfügbar - bitte plugin.rasp.php in [config/plugins.xml] einbinden</de>
-	    <ru></ru>
+	    <ru>{#server}» {#admin}Локальные рекорды недоступны - включите plugin.rasp.php в [config/plugins.xml]</ru>
     </message_activate_rasp>
 
 	<message_add_permanent>
